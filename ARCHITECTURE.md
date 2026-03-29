@@ -124,12 +124,12 @@ parent-role: facilitate      # guide | facilitate | observe | participate
 | `content-type` | string | yes | `lesson`, `activity`, `project`, `field-plan`, `recipe`, `experiment`, `adventure`, `practice`, `discussion`, `service` | Content format |
 | `readiness-indicators` | string[] | yes | free text | Observable signs a child is ready for this content |
 | `learning-objectives` | string[] | yes | free text | What the learner will know or be able to do |
-| `modality` | string | yes | `hands-on`, `verbal`, `visual`, `mixed` | Primary learning modality |
+| `modality` | string | yes | `hands-on`, `verbal`, `visual`, `mixed`, `field`, `practice`, `reflective` | Primary learning modality |
 | `duration` | string | yes | free text | Expected time commitment |
 | `materials` | string[] | yes | free text (empty `[]` if none) | Required materials or tools |
 | `safety-level` | string | yes | `green`, `yellow`, `red` | Risk level |
 | `age-range` | string | yes | free text | Typical age range (guidance, not gatekeeping) |
-| `parent-role` | string | yes | `guide`, `facilitate`, `observe`, `participate` | Parent/adult role during the activity |
+| `parent-role` | string | yes | `guide`, `facilitate`, `observe`, `participate`, `lead`, `absent` | Parent/adult role during the activity. Use `lead` for Genesis stage (parent-directed). Use `absent` when the student works fully independently (typical Architect stage). |
 
 ### Optional Fields
 
