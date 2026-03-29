@@ -18,3 +18,4 @@ data/signups.json
 
 # misc
 .DS_Store
+.vercel
