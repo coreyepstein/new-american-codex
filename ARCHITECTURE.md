@@ -215,8 +215,8 @@ service-neighborhood-cleanup.md
 
 1. **Idea** -- Open an issue using the "Content Idea" template. Describe the content, target stage/pillar, and why it matters.
 2. **Draft** -- Fork the repo. Copy the appropriate template from `/templates/`. Fill in frontmatter and body. Place the file in the correct `curriculum/{stage}/{pillar}/` directory.
-3. **Review** -- Open a PR using the PR template. At least one domain expert and one editorial reviewer must approve. Automated checks validate frontmatter schema.
-4. **Merge** -- A core maintainer merges after all checks pass. Content goes live on next site deploy.
+3. **Review** -- Open a PR using the PR template. At least one core maintainer must approve. Safety-critical content (yellow/red safety level, field plans, recipes, experiments, adventures) also requires domain expert review. See CONTRIBUTING.md for the full tiered review policy.
+4. **Merge** -- A core maintainer merges after review passes. Frontmatter validation (future CI) and site deployment (future story) will be automated once the `/site/` app ships.
 
 ### Contributor Layers
 

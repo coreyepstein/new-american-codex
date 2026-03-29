@@ -112,7 +112,7 @@ Each content type has different priorities. Here's what reviewers focus on:
 
 **Practice** — Is the routine actually repeatable? Is there progression built in (beginner to advanced)? Does it avoid being tedious?
 
-**Discussion** — Are the prompts genuinely open-ended, not leading? Is there a "Background for Parents" section so the facilitator is prepared? Are multiple reasonable viewpoints acknowledged?
+**Discussion** — Are the prompts genuinely open-ended, not leading? Is there a "Context for the Facilitator" section so the facilitator is prepared? Are multiple reasonable viewpoints acknowledged?
 
 **Service** — Is the service activity real and meaningful, not performative? Does it connect to a genuine community need? Is the reflection component substantive?
 
