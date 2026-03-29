@@ -52,7 +52,7 @@ The ability to think for yourself is the foundation of everything else. This pil
 
 Founding documents and what they actually say. Constitutional principles and how they work in practice. The history of builders, inventors, and entrepreneurs who shaped the country. Free markets, economics, innovation, and civic responsibility. Not mythology — honest engagement with a flawed, extraordinary experiment in self-governance.
 
-### 3. Physical & Survival Skills
+### 3. Physical & Survival
 
 Wilderness navigation with map and compass. Building fire and shelter. Purifying water. First aid that goes beyond band-aids. Physical fitness as a discipline, not a punishment. Self-defense fundamentals. The confidence that comes from knowing you can take care of yourself and others when things go wrong.
 

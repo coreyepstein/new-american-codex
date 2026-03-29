@@ -45,12 +45,12 @@ Six developmental stages, ordered from earliest to most advanced. These are NOT 
 
 | Stage | Directory | Description |
 |-------|-----------|-------------|
-| Genesis | `genesis` | Sensory awakening, wonder, safe exploration. The world is new. |
-| Foundation | `foundation` | Core patterns, routines, first independence. Building the base. |
-| Explorer | `explorer` | Curiosity-driven discovery, expanding range, asking "why." |
-| Builder | `builder` | Making things, solving problems, developing craft. Hands in the material. |
-| Apprentice | `apprentice` | Deepening mastery, mentorship, real-world stakes. Skin in the game. |
-| Architect | `architect` | Systems thinking, leadership, designing solutions for others. Building the next thing. |
+| Genesis | `genesis` | Parenting philosophy, prenatal nutrition, preparing the environment. The world before arrival. |
+| Foundation | `foundation` | Sensory learning, nature exposure, motor skills, language immersion. Building the base through the body. |
+| Explorer | `explorer` | Curiosity-driven discovery, reading/math foundations, outdoor skills, asking "why." |
+| Builder | `builder` | Project-based learning, making things, programming basics, logic. Hands in the material. |
+| Apprentice | `apprentice` | Specialization, real-world projects, independent work, forming opinions. Skin in the game. |
+| Architect | `architect` | Capstone projects, entrepreneurship, leadership, college/trade prep. Building the next thing. |
 
 ## Pillars
 
@@ -60,7 +60,7 @@ Eight curriculum pillars spanning the full range of human capability.
 |--------|-----------|-------------|
 | Agency & Critical Thinking | `agency-critical-thinking` | Reasoning, decision-making, intellectual self-defense, sovereignty of mind |
 | American Dynamism | `american-dynamism` | Civics, entrepreneurship, history of builders, democratic participation |
-| Physical Survival | `physical-survival` | Wilderness skills, fitness, first aid, self-defense, resilience |
+| Physical & Survival | `physical-survival` | Wilderness skills, fitness, first aid, self-defense, resilience |
 | Building & Engineering | `building-engineering` | Construction, mechanics, electronics, making things that work |
 | Software & AI | `software-ai` | Programming, computational thinking, AI literacy, digital creation |
 | Food & Farming | `food-farming` | Growing, cooking, nutrition, food systems, land stewardship |
