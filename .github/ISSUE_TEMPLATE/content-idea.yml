@@ -1,0 +1,130 @@
+name: Content Idea
+description: Propose a new piece of curriculum content
+title: "[Content Idea] "
+labels: ["content-idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing content for the New American Codex! Please fill out the fields below so reviewers can evaluate and prioritize your idea.
+
+  - type: input
+    id: title
+    attributes:
+      label: Content Title
+      description: A clear, descriptive title for the content piece
+      placeholder: "e.g., Fire Starting: Three Methods"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: content-type
+    attributes:
+      label: Content Type
+      description: What format should this content take?
+      options:
+        - lesson
+        - activity
+        - project
+        - field-plan
+        - recipe
+        - experiment
+        - adventure
+        - practice
+        - discussion
+        - service
+    validations:
+      required: true
+
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Stage
+      description: What developmental stage is this content for?
+      options:
+        - genesis
+        - foundation
+        - explorer
+        - builder
+        - apprentice
+        - architect
+    validations:
+      required: true
+
+  - type: dropdown
+    id: pillar
+    attributes:
+      label: Pillar
+      description: Which curriculum pillar does this fall under?
+      options:
+        - agency-critical-thinking
+        - american-dynamism
+        - physical-survival
+        - building-engineering
+        - software-ai
+        - food-farming
+        - core-academics
+        - character-purpose
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What would this content cover? Why does it matter?
+      placeholder: Describe the content, its purpose, and what makes it valuable for learners at this stage.
+    validations:
+      required: true
+
+  - type: textarea
+    id: learning-objectives
+    attributes:
+      label: Learning Objectives
+      description: What will the learner know or be able to do after completing this?
+      placeholder: |
+        - Objective 1
+        - Objective 2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: safety-level
+    attributes:
+      label: Safety Level
+      description: What level of risk does this content involve?
+      options:
+        - green (no risk)
+        - yellow (supervision needed)
+        - red (expert guidance required)
+    validations:
+      required: true
+
+  - type: textarea
+    id: materials
+    attributes:
+      label: Materials Needed
+      description: What materials, tools, or resources are required?
+      placeholder: |
+        - Material 1
+        - Material 2
+        (Write "None" if no materials needed)
+    validations:
+      required: false
+
+  - type: textarea
+    id: prior-art
+    attributes:
+      label: Prior Art / References
+      description: Are there existing resources, books, or curricula that cover similar ground? Links welcome.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution Interest
+      options:
+        - label: I would like to write this content myself
+        - label: I can review this content for accuracy if someone else writes it
+        - label: I have field-tested similar content with children

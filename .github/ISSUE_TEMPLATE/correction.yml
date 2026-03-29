@@ -1,0 +1,55 @@
+name: Correction
+description: Report an error or inaccuracy in existing content
+title: "[Correction] "
+labels: ["correction", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us keep the Codex accurate. Please describe the error and provide the correct information.
+
+  - type: input
+    id: file-path
+    attributes:
+      label: File Path
+      description: Path to the file containing the error
+      placeholder: "e.g., curriculum/explorer/physical-survival/lesson-fire-starting-basics.md"
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-description
+    attributes:
+      label: What is incorrect?
+      description: Quote the specific text that contains the error and explain what's wrong.
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Correct Information
+      description: What should it say instead? Please provide sources if possible.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How serious is this error?
+      options:
+        - safety (could cause harm if followed)
+        - factual (incorrect information)
+        - clarity (confusing but not wrong)
+        - typo (minor text error)
+    validations:
+      required: true
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Links or references supporting the correction
+    validations:
+      required: false
