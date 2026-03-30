@@ -112,21 +112,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Donate CTA */}
+      {/* Get Involved CTA */}
       <section className="bg-black text-offwhite section-padding-sm">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="font-heading text-2xl font-bold uppercase mb-4">
-            Help Build the Codex
+            Be Part of Something Better
           </h2>
           <p className="text-offwhite/60 mb-8 leading-relaxed">
-            This is a community project. Your support helps us keep the
-            curriculum free, open, and growing.
+            This is a community project. Parents, educators, builders — if you
+            believe education should be open and rooted in real capability, we
+            want to hear from you.
           </p>
           <Link
-            href="/donate"
+            href="/get-involved"
             className="inline-flex items-center justify-center bg-red text-offwhite font-mono text-xs uppercase tracking-[0.15em] px-8 py-3.5 hover:bg-red/90 transition-colors"
           >
-            Support the Project
+            Get Involved
           </Link>
         </div>
       </section>

@@ -33,10 +33,10 @@ export function Footer() {
                 About
               </Link>
               <Link
-                href="/donate"
+                href="/get-involved"
                 className="text-sm hover:text-red transition-colors"
               >
-                Donate
+                Get Involved
               </Link>
               <Link
                 href="https://github.com/coreyepstein/new-american-codex"

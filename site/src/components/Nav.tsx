@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/nextjs";
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ export function Nav() {
     { href: "/contribute", label: "Contribute" },
     { href: "/framework", label: "Framework" },
     { href: "/about", label: "About" },
-    { href: "/donate", label: "Donate" },
+    { href: "/get-involved", label: "Get Involved" },
   ];
 
   return (
@@ -38,6 +39,26 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
+            <SignedIn>
+              <Link
+                href="/dashboard"
+                className="font-mono text-[10px] uppercase tracking-[0.15em] text-red hover:text-red/80 transition-colors font-bold"
+              >
+                My Plans
+              </Link>
+              <UserButton
+                appearance={{
+                  elements: { avatarBox: "w-7 h-7" },
+                }}
+              />
+            </SignedIn>
+            <SignedOut>
+              <SignInButton mode="modal">
+                <button className="font-mono text-[10px] uppercase tracking-[0.15em] text-text-secondary hover:text-red transition-colors">
+                  Sign In
+                </button>
+              </SignInButton>
+            </SignedOut>
             <Link
               href="https://github.com/coreyepstein/new-american-codex"
               target="_blank"
@@ -94,6 +115,25 @@ export function Nav() {
                   {link.label}
                 </Link>
               ))}
+              <SignedIn>
+                <Link
+                  href="/dashboard"
+                  onClick={() => setIsOpen(false)}
+                  className="font-mono text-xs uppercase tracking-[0.15em] text-red hover:text-red/80 transition-colors font-bold"
+                >
+                  My Plans
+                </Link>
+              </SignedIn>
+              <SignedOut>
+                <SignInButton mode="modal">
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="font-mono text-xs uppercase tracking-[0.15em] text-text-secondary hover:text-red transition-colors text-left"
+                  >
+                    Sign In
+                  </button>
+                </SignInButton>
+              </SignedOut>
               <Link
                 href="https://github.com/coreyepstein/new-american-codex"
                 target="_blank"

@@ -15,21 +15,24 @@ Open-source curriculum for raising capable, self-governing humans. Two separate 
 |-----|-----------|
 | `ANTHROPIC_API_KEY` | `site/src/app/api/personalize/route.ts` — calls `claude-sonnet-4-20250514` |
 | `GITHUB_TOKEN` | `site/src/app/api/contribute/*/route.ts` — creates branches, files, and PRs via GitHub REST API. Needs `repo` scope on `coreyepstein/new-american-codex` |
+| `POSTGRES_URL` | `site/src/lib/db.ts` — Neon Postgres connection string for signups + supporter intake. Auto-injected by Vercel Postgres integration |
 
-Set both in `site/.env.local`. Without them, `/personalize` → 500, `/contribute` → 503.
+Set all in `site/.env.local`. Without them, `/personalize` → 500, `/contribute` → 503, `/api/signup` + `/api/get-involved` → 500.
 
 ## Site Structure
 
 ```
 site/src/
 ├── app/
-│   ├── page.tsx              # Landing (hero, email signup, donate)
+│   ├── page.tsx              # Landing (hero, email signup, get-involved CTA)
 │   ├── browse/               # Curriculum browser + item detail
 │   ├── framework/            # Eight pillars + stage timeline
 │   ├── personalize/          # AI personalization form + results
+│   ├── get-involved/         # Supporter intake form (name, email, phone, LinkedIn, message)
 │   ├── contribute/           # Community content/idea/issue forms
 │   └── api/
-│       ├── signup/           # Email signup stub
+│       ├── signup/           # Email signup → Postgres
+│       ├── get-involved/     # Supporter intake → Postgres
 │       ├── personalize/      # AI week generation
 │       └── contribute/
 │           ├── content/      # New content → GitHub draft PR
@@ -38,6 +41,7 @@ site/src/
 ├── components/               # Shared UI components
 └── lib/
     ├── curriculum.ts         # Filesystem reader (server-only)
+    ├── db.ts                 # Neon Postgres client + ensureTables()
     ├── data.ts               # Pillar/stage/content-type constants
     ├── display-maps.ts       # Slug → display name helpers
     ├── prompts/personalize.ts # Anthropic prompt builders
@@ -95,7 +99,7 @@ Content types: `lesson`, `activity`, `project`, `field-plan`, `recipe`, `experim
 ```bash
 cd site
 pnpm install
-# create site/.env.local with ANTHROPIC_API_KEY and GITHUB_TOKEN
+# create site/.env.local with ANTHROPIC_API_KEY, GITHUB_TOKEN, POSTGRES_URL
 pnpm dev          # http://localhost:3000
 pnpm test         # unit tests
 pnpm typecheck    # TypeScript check

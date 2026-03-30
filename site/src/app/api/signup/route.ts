@@ -1,37 +1,7 @@
 import { NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
-
-interface Signup {
-  email: string;
-  timestamp: string;
-}
-
-interface SignupsData {
-  signups: Signup[];
-}
-
-const DATA_DIR = path.join(process.cwd(), "data");
-const SIGNUPS_FILE = path.join(DATA_DIR, "signups.json");
+import { getDb, ensureTables } from "@/lib/db";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-async function ensureDataFile(): Promise<SignupsData> {
-  try {
-    await fs.mkdir(DATA_DIR, { recursive: true });
-  } catch {
-    // directory exists
-  }
-
-  try {
-    const raw = await fs.readFile(SIGNUPS_FILE, "utf-8");
-    return JSON.parse(raw) as SignupsData;
-  } catch {
-    const initial: SignupsData = { signups: [] };
-    await fs.writeFile(SIGNUPS_FILE, JSON.stringify(initial, null, 2));
-    return initial;
-  }
-}
 
 export async function POST(request: Request) {
   try {
@@ -52,29 +22,26 @@ export async function POST(request: Request) {
       );
     }
 
-    const data = await ensureDataFile();
+    await ensureTables();
+    const sql = getDb();
 
     // Check for duplicates
-    const exists = data.signups.some((s) => s.email === email);
-    if (exists) {
+    const existing = await sql`SELECT id FROM signups WHERE email = ${email}`;
+    if (existing.length > 0) {
       return NextResponse.json({
         success: true,
         message: "You're already on the list! We'll keep you posted.",
       });
     }
 
-    data.signups.push({
-      email,
-      timestamp: new Date().toISOString(),
-    });
-
-    await fs.writeFile(SIGNUPS_FILE, JSON.stringify(data, null, 2));
+    await sql`INSERT INTO signups (email) VALUES (${email})`;
 
     return NextResponse.json({
       success: true,
       message: "You're on the list! Welcome to the Codex community.",
     });
-  } catch {
+  } catch (err) {
+    console.error("Signup error:", err);
     return NextResponse.json(
       { error: "Something went wrong. Please try again." },
       { status: 500 }
