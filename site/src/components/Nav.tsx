@@ -9,6 +9,7 @@ export function Nav() {
   const links = [
     { href: "/browse", label: "Browse" },
     { href: "/personalize", label: "Personalize" },
+    { href: "/contribute", label: "Contribute" },
     { href: "/framework", label: "Framework" },
     { href: "/about", label: "About" },
     { href: "/donate", label: "Donate" },
