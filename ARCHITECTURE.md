@@ -35,8 +35,43 @@ new-american-codex/
 │   ├── practice.md
 │   ├── discussion.md
 │   └── service.md
-└── site/                    # Next.js application (future)
-    └── (placeholder)
+└── site/                    # Next.js 15 application (deployed)
+    ├── src/
+    │   ├── app/
+    │   │   ├── page.tsx                    # Landing page (hero, email signup, donations)
+    │   │   ├── layout.tsx                  # Root layout + Nav + Footer
+    │   │   ├── browse/
+    │   │   │   ├── page.tsx                # Curriculum browser (filter by stage/pillar/type)
+    │   │   │   └── [...slug]/page.tsx      # Individual curriculum item detail view
+    │   │   ├── framework/page.tsx          # Eight pillars + stage timeline
+    │   │   ├── personalize/page.tsx        # AI personalization UI
+    │   │   ├── contribute/page.tsx         # Community contribution forms
+    │   │   ├── donate/page.tsx             # Donation links
+    │   │   ├── about/page.tsx              # About page
+    │   │   └── api/
+    │   │       ├── signup/route.ts         # Email signup (stub → extend with provider)
+    │   │       ├── personalize/route.ts    # AI week generation (Anthropic SDK)
+    │   │       └── contribute/
+    │   │           ├── content/route.ts    # Community content → GitHub PR
+    │   │           ├── idea/route.ts       # Content idea → GitHub Issue
+    │   │           └── issue/route.ts      # Correction report → GitHub Issue
+    │   ├── components/                     # Shared React components
+    │   └── lib/
+    │       ├── curriculum.ts               # Filesystem reader (server-only, gray-matter)
+    │       ├── data.ts                     # Pillar/stage/content-type constants
+    │       ├── display-maps.ts             # Slug → display name helpers
+    │       ├── prompts/personalize.ts      # Anthropic system + user prompt builders
+    │       └── types/
+    │           ├── personalize.ts          # ChildProfileRequest, GeneratedUnit types
+    │           └── contribute.ts           # ContentSubmission, ContributeResponse types
+    ├── e2e/                                # Playwright E2E tests
+    │   ├── smoke.spec.ts                   # Homepage, framework, browse, personalize
+    │   ├── browse.spec.ts                  # Curriculum browser acceptance tests
+    │   └── personalize.spec.ts             # AI personalization acceptance tests
+    ├── next.config.ts
+    ├── playwright.config.ts
+    ├── vitest.config.ts                    # Unit test runner
+    └── package.json
 ```
 
 ## Stages
@@ -273,8 +308,90 @@ Configure these via GitHub UI (Settings > Discussions):
 | Decision | Choice | Rationale |
 |----------|--------|-----------|
 | Content format | Markdown + YAML frontmatter | Universal, version-controllable, readable |
-| Site framework | Next.js (future) | React ecosystem, SSG for content sites |
+| Site framework | Next.js 15 / React 19 | App Router, RSC for filesystem reads, SSG for content |
+| Unit tests | Vitest | Fast, ESM-native, compatible with Next.js |
+| E2E tests | Playwright | Full browser automation; Chromium only in CI |
+| AI personalization | Anthropic SDK (`claude-sonnet-4-20250514`) | Generates 5-7 units per week from child profile |
+| Community contributions | GitHub REST API (branch → file → PR) | Contributions land as draft PRs for maintainer review |
+| Curriculum data layer | `gray-matter` + Node `fs` at runtime | No database; filesystem is the source of truth |
+| Deployment | Vercel | Native Next.js integration, edge CDN |
 | License (content) | CC BY-SA 4.0 | Open, share-alike ensures derivatives stay open |
 | License (code) | MIT | Standard for open-source code |
 | CI validation | GitHub Actions (future) | Native to GitHub, free for public repos |
 | Content structure | Stage-first, then pillar | Parents think "what stage is my child at?" first |
+
+## Running the Site Locally
+
+```bash
+cd site
+pnpm install
+cp .env.local.example .env.local   # fill in the two required keys
+pnpm dev
+```
+
+### Required Environment Variables
+
+| Variable | Required | Purpose |
+|----------|----------|---------|
+| `ANTHROPIC_API_KEY` | Yes (for AI personalization) | Calls `claude-sonnet-4-20250514` to generate personalized weekly plans |
+| `GITHUB_TOKEN` | Yes (for contributions) | Creates branches, files, and draft PRs via GitHub REST API. Needs `repo` scope on `coreyepstein/new-american-codex` |
+
+Without `ANTHROPIC_API_KEY`, the `/personalize` route returns 500. Without `GITHUB_TOKEN`, the `/contribute` routes return 503.
+
+### Test Commands
+
+```bash
+# Unit tests (Vitest)
+pnpm test
+
+# E2E tests (Playwright) — requires a running build
+pnpm exec playwright test
+
+# Type check
+pnpm typecheck
+```
+
+## API Routes
+
+| Route | Method | Purpose |
+|-------|--------|---------|
+| `/api/signup` | POST | Email list signup (body: `{ email }`) |
+| `/api/personalize` | POST | Generate personalized weekly plan (body: `ChildProfileRequest`) |
+| `/api/contribute/content` | POST | Submit curriculum content → GitHub draft PR |
+| `/api/contribute/idea` | POST | Submit content idea → GitHub Issue |
+| `/api/contribute/issue` | POST | Report correction → GitHub Issue |
+
+All routes implement in-memory per-IP rate limiting (3 req/min for `/personalize`, 3 req/min for `/contribute/content`, 5 req/min for idea/issue routes). Rate limits reset on server restart.
+
+### `POST /api/personalize` Request Schema
+
+```typescript
+{
+  childName?: string        // optional, max stripped of HTML
+  interests: string[]       // 1-5 items
+  stage: string             // foundation | explorer | builder | apprentice | architect
+  learningModality: string  // hands-on | verbal | visual | mixed | field | practice | reflective
+}
+```
+
+Response: `{ units: GeneratedUnit[], childName?: string, stage: string }` — 5-7 units.
+
+### `POST /api/contribute/content` Request Schema
+
+```typescript
+{
+  title: string
+  pillar: string            // valid pillar slug
+  stage: string             // valid stage slug
+  contentType: string       // valid content type slug
+  learningObjectives: string  // newline-separated list
+  materials: string           // newline-separated list
+  duration: string
+  body: string                // markdown body
+  submitterName?: string
+  submitterEmail?: string
+  _trap?: string              // honeypot — non-empty triggers silent no-op response
+}
+```
+
+On success, creates `contribute/content-{slug}-{timestamp}` branch, commits the file to `curriculum/{stage}/{pillar}/{contentType}-{slug}.md`, and opens a draft PR. Returns `{ url: string, number: number }`.
