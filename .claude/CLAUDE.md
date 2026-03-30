@@ -52,6 +52,34 @@ Stages: `genesis`, `foundation`, `explorer`, `builder`, `apprentice`, `architect
 Pillars: `agency-critical-thinking`, `american-dynamism`, `physical-survival`, `building-engineering`, `software-ai`, `food-farming`, `core-academics`, `character-purpose`
 Content types: `lesson`, `activity`, `project`, `field-plan`, `recipe`, `experiment`, `adventure`, `practice`, `discussion`, `service`
 
+## Design System — American Industrial Aesthetic
+
+**Fonts (3-font system, all via Google Fonts):**
+- `font-heading` — Oswald (400/600/700). Headlines, pillar names, uppercase. Commands.
+- `font-body` — Source Serif 4 (400/600, italic 400). Body copy, descriptions. Narrative.
+- `font-mono` — Space Mono (400/700). Labels, metadata, technical info, uppercase tracked. Data.
+
+**Colors (defined in `globals.css` `@theme {}`):**
+- Red `#B91C1C` — primary accent, CTA buttons, left-border cards, labels
+- Navy `#1E3A5F` — secondary accent, bottom bars, stage left-borders
+- Black `#0F0F0F` — dark sections (hero, footer, donate CTA)
+- Off-white `#FAFAFA` — page background
+- Text hierarchy: `text-primary` (#000000BF), `text-secondary` (#00000080), `text-tertiary` (#00000040), `text-label` (#0000004D)
+
+**Utility classes (in `globals.css`):**
+- `.accent-bar-top` / `.accent-bar-bottom` — 8px red/navy full-width bars
+- `.label-text` — Space Mono 11px bold uppercase, red, tracked
+- `.meta-text` — Space Mono 11px uppercase, muted (ONLY for light backgrounds)
+- `.industrial-card` / `.industrial-card-navy` — card with 4px left-border accent
+- `.red-divider` — 5rem × 4px red bar
+- `.fluid-h1/h2/h3` — responsive Oswald uppercase headings
+
+**Key patterns:**
+- All cards use sharp corners (no `rounded-*`)
+- Pillar/stage badges use uniform structural accents (red/navy left-border), NOT per-pillar colors
+- Dark sections: hero, footer, donate CTA use `bg-black text-offwhite`
+- Paper design board: accessible via Paper MCP (file: "The New American")
+
 ## Gotchas
 
 - **`curriculum.ts` is `server-only`** — do not import it from client components. Use API routes or server components.
