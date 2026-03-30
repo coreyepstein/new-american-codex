@@ -33,14 +33,16 @@ const ELIGIBLE_STAGES = STAGES.filter((s) => s.name !== "Genesis");
 
 interface ChildProfileFormProps {
   onSubmit: (profile: ChildProfileRequest) => void;
+  defaultStage?: string;
+  defaultModality?: ChildProfileRequest["learningModality"];
 }
 
-export function ChildProfileForm({ onSubmit }: ChildProfileFormProps) {
+export function ChildProfileForm({ onSubmit, defaultStage, defaultModality }: ChildProfileFormProps) {
   const [childName, setChildName] = useState("");
   const [interests, setInterests] = useState<string[]>([]);
   const [customInterest, setCustomInterest] = useState("");
-  const [stage, setStage] = useState("");
-  const [modality, setModality] = useState<ChildProfileRequest["learningModality"] | "">("");
+  const [stage, setStage] = useState(defaultStage ?? "");
+  const [modality, setModality] = useState<ChildProfileRequest["learningModality"] | "">(defaultModality ?? "");
 
   const toggleInterest = useCallback((interest: string) => {
     setInterests((prev) => {
