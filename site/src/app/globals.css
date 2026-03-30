@@ -132,3 +132,11 @@ h6 {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Print styles for personalized week */
+@media print {
+  nav, footer, .no-print { display: none !important; }
+  body { background: white !important; color: black !important; }
+  .print-break-avoid { break-inside: avoid; }
+  .print-expanded { max-height: none !important; overflow: visible !important; }
+}
