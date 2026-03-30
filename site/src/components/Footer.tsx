@@ -2,15 +2,15 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-parchment/80">
+    <footer className="bg-black text-offwhite/80">
       <div className="max-w-6xl mx-auto px-6 section-padding-sm">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* Wordmark + tagline */}
           <div>
-            <p className="font-serif font-semibold text-xl text-parchment mb-2">
+            <p className="font-heading font-bold text-xl uppercase tracking-wider text-offwhite mb-2">
               New American Codex
             </p>
-            <p className="text-sm text-parchment/60 leading-relaxed">
+            <p className="text-sm text-offwhite/60 leading-relaxed font-body">
               An open-source curriculum for raising capable, self-governing
               humans.
             </p>
@@ -18,25 +18,23 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <p className="font-semibold text-sm text-parchment/50 uppercase tracking-wider mb-4">
-              Navigate
-            </p>
+            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-offwhite/40 mb-4">Navigate</p>
             <div className="flex flex-col gap-2">
               <Link
                 href="/framework"
-                className="text-sm hover:text-amber-warm transition-colors"
+                className="text-sm hover:text-red transition-colors"
               >
                 Framework
               </Link>
               <Link
                 href="/about"
-                className="text-sm hover:text-amber-warm transition-colors"
+                className="text-sm hover:text-red transition-colors"
               >
                 About
               </Link>
               <Link
                 href="/donate"
-                className="text-sm hover:text-amber-warm transition-colors"
+                className="text-sm hover:text-red transition-colors"
               >
                 Donate
               </Link>
@@ -44,7 +42,7 @@ export function Footer() {
                 href="https://github.com/coreyepstein/new-american-codex"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm hover:text-amber-warm transition-colors"
+                className="text-sm hover:text-red transition-colors"
               >
                 GitHub Repository
               </Link>
@@ -53,16 +51,14 @@ export function Footer() {
 
           {/* License */}
           <div>
-            <p className="font-semibold text-sm text-parchment/50 uppercase tracking-wider mb-4">
-              License
-            </p>
+            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-offwhite/40 mb-4">License</p>
             <p className="text-sm leading-relaxed">
               Curriculum content:{" "}
               <Link
                 href="https://creativecommons.org/licenses/by-sa/4.0/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-amber-warm hover:text-amber-light transition-colors"
+                className="text-red hover:text-red/80 transition-colors"
               >
                 CC BY-SA 4.0
               </Link>
@@ -73,7 +69,7 @@ export function Footer() {
                 href="https://opensource.org/licenses/MIT"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-amber-warm hover:text-amber-light transition-colors"
+                className="text-red hover:text-red/80 transition-colors"
               >
                 MIT License
               </Link>
@@ -81,16 +77,18 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-parchment/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-parchment/40">
+        <div className="mt-10 pt-6 border-t border-offwhite/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-offwhite/40">
             &copy; {new Date().getFullYear()} The New American Codex. Built in
             the open.
           </p>
-          <p className="text-xs text-parchment/40">
+          <p className="text-xs text-offwhite/40">
             Independence. Creativity. Curiosity. Confidence. Strength.
           </p>
         </div>
       </div>
+
+      <div className="accent-bar-bottom" />
     </footer>
   );
 }

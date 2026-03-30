@@ -97,7 +97,7 @@ export function FilterBar({
       {/* Search */}
       <div className="relative">
         <svg
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-deep/40"
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-secondary"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -119,7 +119,7 @@ export function FilterBar({
               300
             );
           }}
-          className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-ink/10 bg-white text-sm text-ink placeholder:text-slate-deep/40 focus:outline-none focus:ring-2 focus:ring-amber-warm/30 focus:border-amber-warm/50 transition-colors"
+          className="w-full pl-10 pr-4 py-2.5 border border-card-border bg-white text-sm text-black font-mono text-xs uppercase placeholder:text-text-secondary/60 placeholder:normal-case placeholder:capitalize-none focus:outline-none focus:ring-2 focus:ring-red focus:border-red transition-colors"
         />
       </div>
 
@@ -128,7 +128,7 @@ export function FilterBar({
         <select
           value={activeStage}
           onChange={(e) => updateFilter("stage", e.target.value)}
-          className="px-3 py-2 rounded-lg border border-ink/10 bg-white text-sm text-ink focus:outline-none focus:ring-2 focus:ring-amber-warm/30 focus:border-amber-warm/50 transition-all duration-300"
+          className="px-3 py-2 border border-card-border bg-white font-mono text-xs uppercase text-black focus:outline-none focus:ring-2 focus:ring-red focus:border-red transition-all duration-300"
         >
           <option value="">All Stages</option>
           {STAGES.map((s) => (
@@ -141,7 +141,7 @@ export function FilterBar({
         <select
           value={activePillar}
           onChange={(e) => updateFilter("pillar", e.target.value)}
-          className="px-3 py-2 rounded-lg border border-ink/10 bg-white text-sm text-ink focus:outline-none focus:ring-2 focus:ring-amber-warm/30 focus:border-amber-warm/50 transition-all duration-300"
+          className="px-3 py-2 border border-card-border bg-white font-mono text-xs uppercase text-black focus:outline-none focus:ring-2 focus:ring-red focus:border-red transition-all duration-300"
         >
           <option value="">All Pillars</option>
           {PILLARS.map((p) => (
@@ -154,7 +154,7 @@ export function FilterBar({
         <select
           value={activeContentType}
           onChange={(e) => updateFilter("type", e.target.value)}
-          className="px-3 py-2 rounded-lg border border-ink/10 bg-white text-sm text-ink focus:outline-none focus:ring-2 focus:ring-amber-warm/30 focus:border-amber-warm/50 transition-all duration-300"
+          className="px-3 py-2 border border-card-border bg-white font-mono text-xs uppercase text-black focus:outline-none focus:ring-2 focus:ring-red focus:border-red transition-all duration-300"
         >
           <option value="">All Types</option>
           {CONTENT_TYPES.map((ct) => (
@@ -167,7 +167,7 @@ export function FilterBar({
         {hasFilters && (
           <button
             onClick={clearFilters}
-            className="px-3 py-2 rounded-lg text-sm font-medium text-amber-warm hover:text-amber-deep hover:bg-amber-warm/5 transition-colors"
+            className="px-3 py-2 font-mono text-xs uppercase font-medium text-red hover:text-red/80 hover:bg-red/5 transition-colors"
           >
             Clear filters
           </button>
@@ -175,15 +175,15 @@ export function FilterBar({
       </div>
 
       {/* Results count */}
-      <p className="text-sm text-slate-deep/60">
+      <p className="text-sm text-text-secondary font-mono">
         {hasFilters ? (
           <>
-            Showing <span className="font-medium text-ink">{filteredCount}</span>{" "}
+            Showing <span className="font-medium text-black">{filteredCount}</span>{" "}
             of {totalCount} content units
           </>
         ) : (
           <>
-            <span className="font-medium text-ink">{totalCount}</span> content
+            <span className="font-medium text-black">{totalCount}</span> content
             units available
           </>
         )}

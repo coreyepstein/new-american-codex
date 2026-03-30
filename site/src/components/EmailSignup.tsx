@@ -37,19 +37,20 @@ export function EmailSignup() {
   }
 
   return (
-    <section id="signup" className="bg-cream section-padding">
+    <section id="signup" className="bg-card-bg section-padding">
       <div className="max-w-xl mx-auto px-6 text-center">
-        <h2 className="fluid-h3 font-serif font-bold text-ink mb-3">
+        <p className="label-text mb-4">Stay Updated</p>
+        <h2 className="fluid-h3 font-heading font-bold text-black mb-3">
           Join the Codex Community
         </h2>
-        <p className="text-base text-slate-deep/70 mb-8 leading-relaxed">
+        <p className="text-base text-text-secondary mb-8 leading-relaxed font-body">
           Get updates as the curriculum grows. No spam, no noise &mdash; just
           meaningful progress on building something better for our kids.
         </p>
 
         {state === "success" ? (
-          <div className="bg-sage/10 border border-sage/30 rounded-lg p-6">
-            <p className="text-sage font-semibold">{message}</p>
+          <div className="bg-green-50 border border-green-200 p-6">
+            <p className="text-green-700 font-semibold font-body">{message}</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
@@ -59,12 +60,12 @@ export function EmailSignup() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
               required
-              className="flex-1 px-5 py-3.5 bg-parchment border border-ink/10 rounded-lg text-ink placeholder:text-slate-deep/40 focus:outline-none focus:ring-2 focus:ring-amber-warm/40 focus:border-amber-warm transition-shadow"
+              className="flex-1 px-5 py-3.5 bg-offwhite border border-card-border text-black placeholder:text-text-secondary/40 focus:outline-none focus:ring-2 focus:ring-red/40 focus:border-red transition-shadow font-body"
             />
             <button
               type="submit"
               disabled={state === "loading"}
-              className="px-8 py-3.5 bg-amber-warm text-ink font-semibold text-sm rounded-lg hover:bg-amber-light disabled:opacity-60 disabled:cursor-not-allowed transition-colors shrink-0"
+              className="px-8 py-3.5 bg-red text-offwhite font-mono text-xs uppercase tracking-[0.15em] hover:bg-red/90 disabled:opacity-60 disabled:cursor-not-allowed transition-colors shrink-0"
             >
               {state === "loading" ? "Joining..." : "Get Updates"}
             </button>
@@ -72,7 +73,7 @@ export function EmailSignup() {
         )}
 
         {state === "error" && (
-          <p className="text-red-600 text-sm mt-3">{message}</p>
+          <p className="text-red text-sm mt-3 font-body">{message}</p>
         )}
       </div>
     </section>

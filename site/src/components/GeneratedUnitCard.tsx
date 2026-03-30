@@ -87,38 +87,38 @@ export function GeneratedUnitCard({ unit, index }: GeneratedUnitCardProps) {
   }, [unit.body]);
 
   return (
-    <article className="bg-white rounded-xl border border-ink/5 p-5 print-break-avoid">
+    <article className="industrial-card p-5 print-break-avoid">
       {/* Day badge + Stage */}
       <div className="flex items-center justify-between gap-3 mb-3">
-        <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-amber-warm/10 text-amber-warm">
+        <span className="text-xs font-bold px-2.5 py-1 bg-red/10 text-red font-mono uppercase">
           Day {index + 1}
         </span>
         <span
-          className={`text-xs font-medium px-2 py-0.5 rounded-full ${stageColor}`}
+          className={`text-xs font-medium px-2 py-0.5 ${stageColor}`}
         >
           {capitalize(unit.stage)}
         </span>
       </div>
 
       {/* Title */}
-      <h3 className="font-serif font-semibold text-ink text-lg leading-snug mb-3">
+      <h3 className="font-heading font-semibold text-black text-lg uppercase leading-snug mb-3">
         {unit.title}
       </h3>
 
       {/* Badges */}
       <div className="flex flex-wrap gap-1.5 mb-3">
         <span
-          className={`text-xs font-medium px-2 py-0.5 rounded-full ${pillarColor}`}
+          className={`text-xs font-medium px-2 py-0.5 ${pillarColor}`}
         >
           {pillarLabel}
         </span>
-        <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">
+        <span className="text-xs font-medium px-2 py-0.5 bg-card-bg text-text-secondary border border-card-border">
           {contentIcon} {formatContentType(unit.contentType)}
         </span>
       </div>
 
       {/* Duration & materials count */}
-      <div className="flex items-center gap-4 text-xs text-slate-deep/60 mb-4">
+      <div className="flex items-center gap-4 text-text-secondary font-mono text-xs mb-4">
         {unit.duration && (
           <span className="flex items-center gap-1">
             <svg
@@ -156,16 +156,16 @@ export function GeneratedUnitCard({ unit, index }: GeneratedUnitCardProps) {
       {/* Learning objectives */}
       {unit.learningObjectives.length > 0 && (
         <div className="mb-4">
-          <h4 className="text-xs font-semibold text-slate-deep/50 uppercase tracking-wide mb-2">
+          <h4 className="font-mono text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">
             Learning Objectives
           </h4>
           <ul className="space-y-1">
             {unit.learningObjectives.map((lo, i) => (
               <li
                 key={i}
-                className="text-sm text-slate-deep/80 flex items-start gap-2"
+                className="text-sm text-text-secondary font-body flex items-start gap-2"
               >
-                <span className="text-amber-warm mt-0.5 shrink-0">
+                <span className="text-red mt-0.5 shrink-0">
                   {i + 1}.
                 </span>
                 {lo}
@@ -183,25 +183,25 @@ export function GeneratedUnitCard({ unit, index }: GeneratedUnitCardProps) {
               expanded ? "max-h-none print-expanded" : "max-h-0"
             }`}
           >
-            <div className="pt-4 border-t border-ink/5">
+            <div className="pt-4 border-t border-card-border">
               <article
                 className="prose prose-sm max-w-none
-                  prose-headings:font-serif prose-headings:text-ink
+                  prose-headings:font-heading prose-headings:text-black prose-headings:uppercase
                   prose-h2:text-lg prose-h2:mt-6 prose-h2:mb-3
                   prose-h3:text-base prose-h3:mt-4 prose-h3:mb-2
-                  prose-p:text-slate-deep/80 prose-p:leading-relaxed
-                  prose-li:text-slate-deep/80
-                  prose-strong:text-ink
-                  prose-a:text-amber-warm prose-a:no-underline hover:prose-a:text-amber-deep
-                  prose-blockquote:border-l-amber-warm prose-blockquote:text-slate-deep/70
-                  prose-code:text-amber-deep prose-code:bg-cream prose-code:px-1 prose-code:py-0.5 prose-code:rounded"
+                  prose-p:text-text-secondary prose-p:leading-relaxed prose-p:font-body
+                  prose-li:text-text-secondary prose-li:font-body
+                  prose-strong:text-black
+                  prose-a:text-red prose-a:no-underline hover:prose-a:text-red/80
+                  prose-blockquote:border-l-red prose-blockquote:text-text-secondary
+                  prose-code:text-red prose-code:bg-card-bg prose-code:px-1 prose-code:py-0.5 prose-code:font-mono"
                 dangerouslySetInnerHTML={{ __html: bodyHtml }}
               />
             </div>
           </div>
           <button
             onClick={() => setExpanded(!expanded)}
-            className="mt-3 text-sm font-medium text-amber-warm hover:text-amber-deep transition-colors no-print flex items-center gap-1"
+            className="mt-3 font-mono text-xs uppercase font-medium text-red hover:text-red/80 transition-colors no-print flex items-center gap-1"
             aria-expanded={expanded}
             aria-label={expanded ? "Collapse details" : "Read more details"}
           >

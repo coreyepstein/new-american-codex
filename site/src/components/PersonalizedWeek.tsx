@@ -21,16 +21,16 @@ export function PersonalizedWeek({ response }: PersonalizedWeekProps) {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
         <div>
-          <h1 className="font-serif fluid-h3 font-bold text-ink mb-2">
+          <h1 className="font-heading fluid-h3 font-bold text-black uppercase mb-2">
             {heading}
           </h1>
           <div className="flex items-center gap-2">
             <span
-              className={`text-xs font-medium px-2.5 py-1 rounded-full ${stageColor}`}
+              className={`text-xs font-medium px-2.5 py-1 ${stageColor}`}
             >
               {capitalize(stage)}
             </span>
-            <span className="text-sm text-slate-deep/60">
+            <span className="text-sm text-text-secondary font-mono">
               {units.length} unit{units.length !== 1 ? "s" : ""} generated
             </span>
           </div>
@@ -38,7 +38,7 @@ export function PersonalizedWeek({ response }: PersonalizedWeekProps) {
 
         <button
           onClick={() => window.print()}
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-ink/10 rounded-lg text-sm font-medium text-slate-deep hover:border-amber-warm/30 hover:text-amber-warm transition-colors no-print"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-card-border font-mono text-xs uppercase font-medium text-text-primary hover:border-red/30 hover:text-red transition-colors no-print"
           aria-label="Print this week's curriculum"
         >
           <svg

@@ -1,12 +1,12 @@
 export const PILLAR_COLORS: Record<string, string> = {
-  "agency-critical-thinking": "bg-purple-100 text-purple-800",
-  "american-dynamism": "bg-blue-100 text-blue-800",
-  "physical-survival": "bg-green-100 text-green-800",
-  "building-engineering": "bg-orange-100 text-orange-800",
-  "software-ai": "bg-cyan-100 text-cyan-800",
-  "food-farming": "bg-lime-100 text-lime-800",
-  "core-academics": "bg-amber-100 text-amber-800",
-  "character-purpose": "bg-rose-100 text-rose-800",
+  "agency-critical-thinking": "bg-card-bg text-text-primary border-l-4 border-l-red",
+  "american-dynamism": "bg-card-bg text-text-primary border-l-4 border-l-red",
+  "physical-survival": "bg-card-bg text-text-primary border-l-4 border-l-red",
+  "building-engineering": "bg-card-bg text-text-primary border-l-4 border-l-red",
+  "software-ai": "bg-card-bg text-text-primary border-l-4 border-l-red",
+  "food-farming": "bg-card-bg text-text-primary border-l-4 border-l-red",
+  "core-academics": "bg-card-bg text-text-primary border-l-4 border-l-red",
+  "character-purpose": "bg-card-bg text-text-primary border-l-4 border-l-red",
 };
 
 export const PILLAR_DISPLAY: Record<string, string> = {
@@ -21,12 +21,12 @@ export const PILLAR_DISPLAY: Record<string, string> = {
 };
 
 export const STAGE_COLORS: Record<string, string> = {
-  genesis: "bg-slate-100 text-slate-700",
-  foundation: "bg-amber-50 text-amber-700",
-  explorer: "bg-emerald-50 text-emerald-700",
-  builder: "bg-sky-50 text-sky-700",
-  apprentice: "bg-violet-50 text-violet-700",
-  architect: "bg-red-50 text-red-700",
+  genesis: "bg-card-bg text-text-primary border-l-4 border-l-navy",
+  foundation: "bg-card-bg text-text-primary border-l-4 border-l-navy",
+  explorer: "bg-card-bg text-text-primary border-l-4 border-l-navy",
+  builder: "bg-card-bg text-text-primary border-l-4 border-l-navy",
+  apprentice: "bg-card-bg text-text-primary border-l-4 border-l-navy",
+  architect: "bg-card-bg text-text-primary border-l-4 border-l-navy",
 };
 
 export const CONTENT_TYPE_ICONS: Record<string, string> = {

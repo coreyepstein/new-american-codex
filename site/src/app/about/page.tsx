@@ -11,13 +11,13 @@ export default function AboutPage() {
     <div className="section-padding">
       <div className="max-w-3xl mx-auto px-6">
         {/* Page header */}
-        <p className="text-sm font-semibold uppercase tracking-[0.15em] text-amber-warm mb-3">
+        <p className="label-text mb-3">
           Philosophy
         </p>
-        <h1 className="fluid-h1 font-serif font-bold text-ink mb-6">
+        <h1 className="fluid-h1 font-heading font-bold uppercase text-black mb-6">
           What We Believe
         </h1>
-        <p className="fluid-body-lg text-slate-deep/70 mb-16 max-w-2xl">
+        <p className="fluid-body-lg text-text-secondary/70 mb-16 max-w-2xl">
           The New American Codex rests on three philosophical foundations. They
           aren&apos;t decorative — they shape every lesson we write, every
           activity we design, and every conversation we encourage families to
@@ -26,10 +26,10 @@ export default function AboutPage() {
 
         {/* The Magical Child */}
         <section className="mb-16">
-          <h2 className="fluid-h2 font-serif font-bold text-ink mb-6">
+          <h2 className="fluid-h2 font-heading font-bold uppercase text-black mb-6">
             The Magical Child
           </h2>
-          <div className="space-y-4 text-base text-slate-deep/80 leading-relaxed">
+          <div className="space-y-4 text-base text-text-primary/80 leading-relaxed">
             <p>
               Joseph Chilton Pearce wrote that children are not empty vessels
               waiting to be filled — they are unfolding intelligences with their
@@ -60,10 +60,10 @@ export default function AboutPage() {
 
         {/* Tikkun Olam */}
         <section className="mb-16">
-          <h2 className="fluid-h2 font-serif font-bold text-ink mb-6">
+          <h2 className="fluid-h2 font-heading font-bold uppercase text-black mb-6">
             Tikkun Olam
           </h2>
-          <div className="space-y-4 text-base text-slate-deep/80 leading-relaxed">
+          <div className="space-y-4 text-base text-text-primary/80 leading-relaxed">
             <p>
               Tikkun Olam — repairing the world — is a concept from Jewish
               tradition that has transcended its origins to become a universal
@@ -94,10 +94,10 @@ export default function AboutPage() {
 
         {/* American Dynamism */}
         <section className="mb-16">
-          <h2 className="fluid-h2 font-serif font-bold text-ink mb-6">
+          <h2 className="fluid-h2 font-heading font-bold uppercase text-black mb-6">
             American Dynamism
           </h2>
-          <div className="space-y-4 text-base text-slate-deep/80 leading-relaxed">
+          <div className="space-y-4 text-base text-text-primary/80 leading-relaxed">
             <p>
               America is not a finished project. It is an ongoing experiment in
               self-governance, individual liberty, and the audacious idea that
@@ -129,8 +129,8 @@ export default function AboutPage() {
         </section>
 
         {/* Core Values */}
-        <section className="border-t border-ink/10 pt-12">
-          <h2 className="fluid-h3 font-serif font-bold text-ink mb-6">
+        <section className="border-t border-card-border pt-12">
+          <h2 className="fluid-h3 font-heading font-bold uppercase text-black mb-6">
             Core Values
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -157,10 +157,10 @@ export default function AboutPage() {
               },
             ].map((item) => (
               <div key={item.value}>
-                <h3 className="font-serif font-semibold text-lg text-ink mb-2">
+                <h3 className="font-heading font-bold uppercase text-lg text-black mb-2">
                   {item.value}
                 </h3>
-                <p className="text-sm text-slate-deep/70 leading-relaxed">
+                <p className="text-sm text-text-secondary/70 leading-relaxed">
                   {item.desc}
                 </p>
               </div>

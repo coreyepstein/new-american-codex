@@ -35,35 +35,35 @@ export function CurriculumCard({
   return (
     <Link
       href={`/browse/${slug}`}
-      className="group block bg-white rounded-xl border border-ink/5 p-5 hover:shadow-lg hover:border-amber-warm/20 hover:-translate-y-1 transition-all duration-200"
+      className="group block industrial-card p-5 hover:shadow-lg hover:border-l-navy hover:-translate-y-1 transition-all duration-200"
     >
       <div className="flex items-start justify-between gap-3 mb-3">
         <span className="text-2xl group-hover:scale-110 transition-transform duration-200" role="img" aria-label={contentType}>
           {icon}
         </span>
         <span
-          className={`text-xs font-medium px-2 py-0.5 rounded-full ${stageColor}`}
+          className={`text-xs font-medium px-2 py-0.5 ${stageColor}`}
         >
           {capitalize(stage)}
         </span>
       </div>
 
-      <h3 className="font-serif font-semibold text-ink text-lg leading-snug group-hover:text-amber-warm transition-colors mb-3">
+      <h3 className="font-heading font-semibold text-black text-lg uppercase leading-snug group-hover:text-red transition-colors mb-3">
         {title}
       </h3>
 
       <div className="flex flex-wrap gap-1.5 mb-3">
         <span
-          className={`text-xs font-medium px-2 py-0.5 rounded-full ${pillarColor}`}
+          className={`text-xs font-medium px-2 py-0.5 ${pillarColor}`}
         >
           {pillarLabel}
         </span>
-        <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">
+        <span className="text-xs font-medium px-2 py-0.5 bg-card-bg text-text-secondary border border-card-border">
           {formatContentType(contentType)}
         </span>
       </div>
 
-      <div className="flex items-center gap-4 text-xs text-slate-deep/60">
+      <div className="flex items-center gap-4 text-text-secondary font-mono text-xs">
         {duration && (
           <span className="flex items-center gap-1">
             <svg

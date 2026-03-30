@@ -16,7 +16,7 @@ export function StageTimeline({ stages }: StageTimelineProps) {
       <div className="hidden md:block">
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute top-6 left-0 right-0 h-px bg-amber-warm/30" />
+          <div className="absolute top-6 left-0 right-0 h-px bg-red/30" />
 
           <div className="grid grid-cols-6 gap-2">
             {stages.map((stage, i) => (
@@ -29,28 +29,28 @@ export function StageTimeline({ stages }: StageTimelineProps) {
               >
                 {/* Dot */}
                 <div
-                  className={`w-3 h-3 rounded-full border-2 mb-4 transition-colors ${
+                  className={`w-3 h-3 border-2 mb-4 transition-colors ${
                     activeIndex === i
-                      ? "bg-amber-warm border-amber-warm"
-                      : "bg-parchment border-amber-warm/50 group-hover:border-amber-warm"
+                      ? "bg-red border-red"
+                      : "bg-offwhite border-red/50 group-hover:border-red"
                   }`}
                 />
 
                 <p
-                  className={`font-serif font-semibold text-base transition-colors ${
+                  className={`font-heading uppercase font-bold text-base transition-colors ${
                     activeIndex === i
-                      ? "text-amber-warm"
-                      : "text-ink group-hover:text-amber-warm"
+                      ? "text-red"
+                      : "text-black group-hover:text-red"
                   }`}
                 >
                   {stage.name}
                 </p>
-                <p className="text-xs text-slate-deep/60 mt-1">
+                <p className="meta-text mt-1">
                   {stage.ages}
                 </p>
 
                 {activeIndex === i && (
-                  <p className="text-sm text-slate-deep/80 mt-3 leading-relaxed">
+                  <p className="text-sm text-text-secondary mt-3 font-body leading-relaxed">
                     {stage.focus}
                   </p>
                 )}
@@ -73,30 +73,30 @@ export function StageTimeline({ stages }: StageTimelineProps) {
             {/* Vertical line + dot */}
             <div className="flex flex-col items-center">
               <div
-                className={`w-3 h-3 rounded-full border-2 shrink-0 transition-colors ${
+                className={`w-3 h-3 border-2 shrink-0 transition-colors ${
                   activeIndex === i
-                    ? "bg-amber-warm border-amber-warm"
-                    : "bg-parchment border-amber-warm/50"
+                    ? "bg-red border-red"
+                    : "bg-offwhite border-red/50"
                 }`}
               />
               {i < stages.length - 1 && (
-                <div className="w-px flex-1 bg-amber-warm/20 mt-2" />
+                <div className="w-px flex-1 bg-red/20 mt-2" />
               )}
             </div>
 
             <div className="pb-4">
               <p
-                className={`font-serif font-semibold text-base transition-colors ${
-                  activeIndex === i ? "text-amber-warm" : "text-ink"
+                className={`font-heading uppercase font-bold text-base transition-colors ${
+                  activeIndex === i ? "text-red" : "text-black"
                 }`}
               >
                 {stage.name}
               </p>
-              <p className="text-xs text-slate-deep/60 mt-0.5">
+              <p className="meta-text mt-0.5">
                 {stage.ages}
               </p>
               {activeIndex === i && (
-                <p className="text-sm text-slate-deep/80 mt-2 leading-relaxed">
+                <p className="text-sm text-text-secondary mt-2 font-body leading-relaxed">
                   {stage.focus}
                 </p>
               )}
@@ -106,7 +106,7 @@ export function StageTimeline({ stages }: StageTimelineProps) {
       </div>
 
       {/* Philosophy note */}
-      <p className="text-center text-sm text-slate-deep/50 italic mt-8">
+      <p className="text-center text-sm text-text-secondary italic mt-8 font-body">
         &ldquo;No child is behind &mdash; only not yet.&rdquo;
       </p>
     </div>

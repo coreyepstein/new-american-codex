@@ -13,15 +13,15 @@ export default function FrameworkPage() {
   return (
     <div>
       {/* Header */}
-      <section className="section-padding bg-parchment">
+      <section className="section-padding bg-offwhite">
         <div className="max-w-3xl mx-auto px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.15em] text-amber-warm mb-3">
+          <p className="label-text mb-3">
             Curriculum Architecture
           </p>
-          <h1 className="fluid-h1 font-serif font-bold text-ink mb-6">
+          <h1 className="fluid-h1 font-heading font-bold uppercase text-black mb-6">
             The Framework
           </h1>
-          <p className="fluid-body-lg text-slate-deep/70 max-w-2xl">
+          <p className="fluid-body-lg text-text-secondary/70 max-w-2xl">
             The Codex is structured around three dimensions: what we teach
             (pillars), when we teach it (stages), and how we teach it (content
             types). Together they form a complete system for raising capable
@@ -31,16 +31,16 @@ export default function FrameworkPage() {
       </section>
 
       {/* 8 Pillars */}
-      <section className="bg-cream section-padding">
+      <section className="bg-card-bg section-padding">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="font-serif text-8xl font-bold text-amber-warm/15 leading-none">
+            <span className="font-heading text-8xl font-bold text-red/15 leading-none">
               8
             </span>
-            <h2 className="fluid-h2 font-serif font-bold text-ink -mt-6 mb-4">
+            <h2 className="fluid-h2 font-heading font-bold uppercase text-black -mt-6 mb-4">
               Pillars
             </h2>
-            <p className="text-slate-deep/60 max-w-xl mx-auto leading-relaxed">
+            <p className="text-text-secondary/60 max-w-xl mx-auto leading-relaxed">
               Every child builds competence across all eight domains. Click any
               pillar to learn more.
             </p>
@@ -51,16 +51,16 @@ export default function FrameworkPage() {
       </section>
 
       {/* 6 Lifecycle Stages */}
-      <section className="section-padding bg-parchment">
+      <section className="section-padding bg-offwhite">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="font-serif text-8xl font-bold text-amber-warm/15 leading-none">
+            <span className="font-heading text-8xl font-bold text-navy/15 leading-none">
               6
             </span>
-            <h2 className="fluid-h2 font-serif font-bold text-ink -mt-6 mb-4">
+            <h2 className="fluid-h2 font-heading font-bold uppercase text-black -mt-6 mb-4">
               Lifecycle Stages
             </h2>
-            <p className="text-slate-deep/60 max-w-xl mx-auto leading-relaxed">
+            <p className="text-text-secondary/60 max-w-xl mx-auto leading-relaxed">
               From pregnancy through age 18, each stage honors a child&apos;s
               developmental readiness. Click a stage to see its focus.
             </p>
@@ -71,16 +71,16 @@ export default function FrameworkPage() {
       </section>
 
       {/* 10 Content Types */}
-      <section className="bg-cream section-padding">
+      <section className="bg-card-bg section-padding">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="font-serif text-8xl font-bold text-amber-warm/15 leading-none">
+            <span className="font-heading text-8xl font-bold text-red/15 leading-none">
               10
             </span>
-            <h2 className="fluid-h2 font-serif font-bold text-ink -mt-6 mb-4">
+            <h2 className="fluid-h2 font-heading font-bold uppercase text-black -mt-6 mb-4">
               Content Types
             </h2>
-            <p className="text-slate-deep/60 max-w-xl mx-auto leading-relaxed">
+            <p className="text-text-secondary/60 max-w-xl mx-auto leading-relaxed">
               Learning takes many forms. Each content type serves a different
               purpose in the child&apos;s development.
             </p>
@@ -90,15 +90,15 @@ export default function FrameworkPage() {
             {CONTENT_TYPES.map((ct) => (
               <div
                 key={ct.name}
-                className="bg-parchment rounded-lg p-6 border border-ink/5"
+                className="bg-offwhite p-6 border-l-4 border-l-red border border-card-border"
               >
-                <h3 className="font-serif font-semibold text-lg text-ink mb-1">
+                <h3 className="font-heading font-bold uppercase text-lg text-black mb-1">
                   {ct.name}
                 </h3>
-                <p className="text-sm text-slate-deep/70 mb-3 leading-relaxed">
+                <p className="text-sm text-text-secondary/70 mb-3 leading-relaxed">
                   {ct.description}
                 </p>
-                <p className="text-xs text-amber-warm italic">
+                <p className="text-xs text-red font-mono italic">
                   Example: {ct.example}
                 </p>
               </div>

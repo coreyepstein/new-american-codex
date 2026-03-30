@@ -1,19 +1,21 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap");
 
 @theme {
-  --color-parchment: #faf7f2;
-  --color-ink: #1a1612;
-  --color-amber-warm: #c17d3c;
-  --color-amber-light: #e8a854;
-  --color-amber-deep: #a0622e;
-  --color-slate-deep: #2d3748;
-  --color-slate-mid: #4a5568;
-  --color-cream: #f5f0e8;
-  --color-sage: #7c8c6e;
+  --color-offwhite: #FAFAFA;
+  --color-black: #0F0F0F;
+  --color-red: #B91C1C;
+  --color-navy: #1E3A5F;
+  --color-text-primary: #000000BF;
+  --color-text-secondary: #00000080;
+  --color-text-tertiary: #00000040;
+  --color-text-label: #0000004D;
+  --color-card-bg: #00000008;
+  --color-card-border: #00000014;
 
-  --font-serif: "Lora", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Oswald", system-ui, sans-serif;
+  --font-body: "Source Serif 4", Georgia, serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
 }
 
 html {
@@ -21,9 +23,9 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
-  color: var(--color-ink);
-  background-color: var(--color-parchment);
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background-color: var(--color-offwhite);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -34,33 +36,92 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
 }
 
-/* Fluid typography */
+/* ─── Fluid typography ─── */
 .fluid-h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1.1;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.95;
   letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
 .fluid-h2 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  line-height: 1.15;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.0;
   letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 
 .fluid-h3 {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  line-height: 1.2;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1.1;
+  text-transform: uppercase;
 }
 
 .fluid-body-lg {
   font-size: clamp(1.125rem, 2vw, 1.375rem);
-  line-height: 1.7;
+  line-height: 1.55;
 }
 
-/* Section spacing */
+/* ─── Industrial accent bars ─── */
+.accent-bar-top {
+  height: 8px;
+  background-color: var(--color-red);
+  width: 100%;
+}
+
+.accent-bar-bottom {
+  height: 8px;
+  background-color: var(--color-navy);
+  width: 100%;
+}
+
+/* ─── Label & meta typography ─── */
+.label-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-red);
+}
+
+.meta-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-label);
+}
+
+/* ─── Industrial card ─── */
+.industrial-card {
+  background-color: var(--color-card-bg);
+  border-left: 4px solid var(--color-red);
+  border-top: 1px solid var(--color-card-border);
+  border-right: 1px solid var(--color-card-border);
+  border-bottom: 1px solid var(--color-card-border);
+}
+
+.industrial-card-navy {
+  background-color: var(--color-card-bg);
+  border-left: 4px solid var(--color-navy);
+  border-top: 1px solid var(--color-card-border);
+  border-right: 1px solid var(--color-card-border);
+  border-bottom: 1px solid var(--color-card-border);
+}
+
+/* ─── Red divider ─── */
+.red-divider {
+  width: 5rem;
+  height: 4px;
+  background-color: var(--color-red);
+}
+
+/* ─── Section spacing ─── */
 .section-padding {
   padding-top: clamp(3rem, 8vw, 6rem);
   padding-bottom: clamp(3rem, 8vw, 6rem);
@@ -71,7 +132,7 @@ h6 {
   padding-bottom: clamp(2rem, 5vw, 4rem);
 }
 
-/* Fade-in animation */
+/* ─── Fade-in animation ─── */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -102,7 +163,7 @@ h6 {
   opacity: 0;
 }
 
-/* Curriculum grid stagger animation */
+/* ─── Curriculum grid stagger ─── */
 .curriculum-grid > * {
   animation: fadeInUp 0.5s ease-out both;
 }
@@ -119,7 +180,7 @@ h6 {
 .curriculum-grid > *:nth-child(11) { animation-delay: 500ms; }
 .curriculum-grid > *:nth-child(12) { animation-delay: 550ms; }
 
-/* Scroll reveal */
+/* ─── Scroll reveal ─── */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -133,7 +194,7 @@ h6 {
   transform: translateY(0);
 }
 
-/* Print styles for personalized week */
+/* ─── Print styles ─── */
 @media print {
   nav, footer, .no-print { display: none !important; }
   body { background: white !important; color: black !important; }

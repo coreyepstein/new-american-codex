@@ -94,84 +94,84 @@ export default async function CurriculumDetailPage({
     <section className="section-padding">
       <div className="max-w-3xl mx-auto px-6">
         {/* Breadcrumb */}
-        <nav className="flex flex-wrap items-center gap-1.5 text-sm text-slate-deep/60 mb-8">
+        <nav className="flex flex-wrap items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-text-secondary/60 mb-8">
           <Link
             href="/browse"
-            className="hover:text-amber-warm transition-colors"
+            className="hover:text-red transition-colors"
           >
             Browse
           </Link>
           <span>/</span>
           <Link
             href={`/browse?stage=${item.stage}`}
-            className="hover:text-amber-warm transition-colors"
+            className="hover:text-red transition-colors"
           >
             {capitalize(item.stage)}
           </Link>
           <span>/</span>
           <Link
             href={`/browse?pillar=${item.pillar}`}
-            className="hover:text-amber-warm transition-colors"
+            className="hover:text-red transition-colors"
           >
             {pillarLabel}
           </Link>
           <span>/</span>
-          <span className="text-ink font-medium truncate">{item.title}</span>
+          <span className="text-black font-medium truncate">{item.title}</span>
         </nav>
 
         {/* Header */}
         <header className="mb-8">
           <div className="flex flex-wrap items-center gap-2 mb-4">
             <span
-              className={`text-xs font-medium px-2.5 py-1 rounded-full ${stageColor}`}
+              className={`text-xs font-medium px-2.5 py-1 ${stageColor}`}
             >
               {capitalize(item.stage)}
             </span>
             <span
-              className={`text-xs font-medium px-2.5 py-1 rounded-full ${pillarColor}`}
+              className={`text-xs font-medium px-2.5 py-1 ${pillarColor}`}
             >
               {pillarLabel}
             </span>
-            <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-gray-100 text-gray-600">
+            <span className="text-xs font-medium px-2.5 py-1 bg-gray-100 text-gray-600">
               {contentIcon} {formatContentType(item.contentType)}
             </span>
           </div>
-          <h1 className="font-serif fluid-h2 font-bold text-ink mb-4">
+          <h1 className="font-heading fluid-h2 font-bold uppercase text-black mb-4">
             {item.title}
           </h1>
 
           {/* Metadata grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-cream/50 rounded-xl border border-ink/5">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-card-bg/50 border border-card-border">
             {item.duration && (
               <div>
-                <p className="text-xs text-slate-deep/50 uppercase tracking-wide font-medium mb-1">
+                <p className="font-mono text-xs text-text-secondary/50 uppercase tracking-wider font-medium mb-1">
                   Duration
                 </p>
-                <p className="text-sm text-ink">{item.duration}</p>
+                <p className="text-sm text-black">{item.duration}</p>
               </div>
             )}
             {item.ageRange && (
               <div>
-                <p className="text-xs text-slate-deep/50 uppercase tracking-wide font-medium mb-1">
+                <p className="font-mono text-xs text-text-secondary/50 uppercase tracking-wider font-medium mb-1">
                   Age Range
                 </p>
-                <p className="text-sm text-ink">{item.ageRange}</p>
+                <p className="text-sm text-black">{item.ageRange}</p>
               </div>
             )}
             {item.parentRole && (
               <div>
-                <p className="text-xs text-slate-deep/50 uppercase tracking-wide font-medium mb-1">
+                <p className="font-mono text-xs text-text-secondary/50 uppercase tracking-wider font-medium mb-1">
                   Parent Role
                 </p>
-                <p className="text-sm text-ink capitalize">{item.parentRole}</p>
+                <p className="text-sm text-black capitalize">{item.parentRole}</p>
               </div>
             )}
             {item.safetyLevel && (
               <div>
-                <p className="text-xs text-slate-deep/50 uppercase tracking-wide font-medium mb-1">
+                <p className="font-mono text-xs text-text-secondary/50 uppercase tracking-wider font-medium mb-1">
                   Safety Level
                 </p>
-                <p className="text-sm text-ink capitalize">
+                <p className="text-sm text-black capitalize">
                   {item.safetyLevel}
                 </p>
               </div>
@@ -181,17 +181,17 @@ export default async function CurriculumDetailPage({
 
         {/* Materials */}
         {item.materials.length > 0 && (
-          <div className="mb-8 p-4 bg-white rounded-xl border border-ink/5">
-            <h2 className="font-serif font-semibold text-ink text-lg mb-3">
+          <div className="mb-8 p-4 bg-white border border-card-border">
+            <h2 className="font-heading font-bold uppercase text-black text-lg mb-3">
               Materials Needed
             </h2>
             <ul className="space-y-1.5">
               {item.materials.map((m, i) => (
                 <li
                   key={i}
-                  className="text-sm text-slate-deep/80 flex items-start gap-2"
+                  className="text-sm text-text-primary/80 flex items-start gap-2"
                 >
-                  <span className="text-amber-warm mt-0.5 shrink-0">
+                  <span className="text-red mt-0.5 shrink-0">
                     &bull;
                   </span>
                   {m}
@@ -203,15 +203,15 @@ export default async function CurriculumDetailPage({
 
         {/* Readiness Indicators */}
         {item.readinessIndicators.length > 0 && (
-          <div className="mb-8 p-4 bg-white rounded-xl border border-ink/5">
-            <h2 className="font-serif font-semibold text-ink text-lg mb-3">
+          <div className="mb-8 p-4 bg-white border border-card-border">
+            <h2 className="font-heading font-bold uppercase text-black text-lg mb-3">
               Readiness Indicators
             </h2>
             <ul className="space-y-1.5">
               {item.readinessIndicators.map((r, i) => (
                 <li
                   key={i}
-                  className="text-sm text-slate-deep/80 flex items-start gap-2"
+                  className="text-sm text-text-primary/80 flex items-start gap-2"
                 >
                   <span className="text-sage mt-0.5 shrink-0">&#10003;</span>
                   {r}
@@ -223,17 +223,17 @@ export default async function CurriculumDetailPage({
 
         {/* Learning Objectives */}
         {item.learningObjectives.length > 0 && (
-          <div className="mb-8 p-4 bg-white rounded-xl border border-ink/5">
-            <h2 className="font-serif font-semibold text-ink text-lg mb-3">
+          <div className="mb-8 p-4 bg-white border border-card-border">
+            <h2 className="font-heading font-bold uppercase text-black text-lg mb-3">
               Learning Objectives
             </h2>
             <ul className="space-y-1.5">
               {item.learningObjectives.map((lo, i) => (
                 <li
                   key={i}
-                  className="text-sm text-slate-deep/80 flex items-start gap-2"
+                  className="text-sm text-text-primary/80 flex items-start gap-2"
                 >
-                  <span className="text-amber-warm mt-0.5 shrink-0">
+                  <span className="text-red mt-0.5 shrink-0">
                     {i + 1}.
                   </span>
                   {lo}
@@ -246,24 +246,24 @@ export default async function CurriculumDetailPage({
         {/* Markdown content */}
         <article
           className="prose prose-lg max-w-none
-            prose-headings:font-serif prose-headings:text-ink
+            prose-headings:font-heading prose-headings:text-black prose-headings:uppercase
             prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
             prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-            prose-p:text-slate-deep/80 prose-p:leading-relaxed
-            prose-li:text-slate-deep/80
-            prose-strong:text-ink
-            prose-a:text-amber-warm prose-a:no-underline hover:prose-a:text-amber-deep
-            prose-blockquote:border-l-amber-warm prose-blockquote:text-slate-deep/70
-            prose-code:text-amber-deep prose-code:bg-cream prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+            prose-p:text-text-primary/80 prose-p:leading-relaxed
+            prose-li:text-text-primary/80
+            prose-strong:text-black
+            prose-a:text-red prose-a:no-underline hover:prose-a:text-red/80
+            prose-blockquote:border-l-red prose-blockquote:text-text-secondary/70
+            prose-code:text-red prose-code:bg-card-bg prose-code:px-1 prose-code:py-0.5
           "
           dangerouslySetInnerHTML={{ __html: htmlContent }}
         />
 
         {/* Back to browse */}
-        <div className="mt-12 pt-8 border-t border-ink/5">
+        <div className="mt-12 pt-8 border-t border-card-border">
           <Link
             href="/browse"
-            className="inline-flex items-center gap-2 text-sm font-medium text-amber-warm hover:text-amber-deep transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-red hover:text-red/80 transition-colors"
           >
             <svg
               className="w-4 h-4"

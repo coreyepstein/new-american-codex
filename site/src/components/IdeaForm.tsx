@@ -30,10 +30,10 @@ type FormState =
   | { kind: "error"; message: string };
 
 const inputClass =
-  "w-full border border-ink/20 rounded-lg px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-amber-warm/40 focus:border-amber-warm transition-colors";
-const labelClass = "block text-sm font-medium text-slate-deep mb-1";
+  "w-full border border-card-border px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red focus:border-red transition-colors";
+const labelClass = "block font-mono text-xs uppercase tracking-wider font-bold text-text-primary mb-1";
 const selectClass =
-  "w-full border border-ink/20 rounded-lg px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-amber-warm/40 focus:border-amber-warm transition-colors";
+  "w-full border border-card-border px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red focus:border-red transition-colors";
 
 export function IdeaForm() {
   const [title, setTitle] = useState("");
@@ -80,12 +80,12 @@ export function IdeaForm() {
 
   if (formState.kind === "success") {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
+      <div className="bg-navy/5 border border-navy/20 p-8 text-center">
         <div className="text-3xl mb-3">✓</div>
-        <h3 className="font-serif text-xl font-semibold text-ink mb-2">
+        <h3 className="font-heading text-xl font-semibold text-black uppercase mb-2">
           Idea submitted!
         </h3>
-        <p className="text-sm text-slate-deep mb-4">
+        <p className="text-sm text-text-secondary font-body mb-4">
           Your idea has been added to the curriculum backlog. Contributors can now pick it up and build it.
         </p>
         {formState.result.url && formState.result.url !== "#" && (
@@ -93,7 +93,7 @@ export function IdeaForm() {
             href={formState.result.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-amber-warm hover:underline"
+            className="inline-flex items-center gap-2 text-sm font-medium text-red hover:underline"
           >
             View Issue #{formState.result.number} on GitHub →
           </a>
@@ -190,7 +190,7 @@ export function IdeaForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className={labelClass} htmlFor="idea-name">
-            Your name <span className="text-ink/40 font-normal">(optional)</span>
+            Your name <span className="text-text-secondary font-normal">(optional)</span>
           </label>
           <input
             id="idea-name"
@@ -205,7 +205,7 @@ export function IdeaForm() {
 
         <div>
           <label className={labelClass} htmlFor="idea-email">
-            Email <span className="text-ink/40 font-normal">(optional)</span>
+            Email <span className="text-text-secondary font-normal">(optional)</span>
           </label>
           <input
             id="idea-email"
@@ -220,7 +220,7 @@ export function IdeaForm() {
       </div>
 
       {formState.kind === "error" && (
-        <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+        <p className="text-sm text-red bg-red/5 border border-red/20 px-4 py-3">
           {formState.message}
         </p>
       )}
@@ -228,7 +228,7 @@ export function IdeaForm() {
       <button
         type="submit"
         disabled={formState.kind === "loading" || !title.trim() || !description.trim()}
-        className="w-full bg-amber-warm text-white font-medium py-3 px-6 rounded-lg hover:bg-amber-warm/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        className="w-full bg-red text-offwhite font-mono text-xs uppercase tracking-[0.15em] py-3 px-6 hover:bg-red/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
       >
         {formState.kind === "loading" ? "Submitting…" : "Submit Idea"}
       </button>

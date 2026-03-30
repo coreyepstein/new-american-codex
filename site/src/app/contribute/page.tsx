@@ -58,16 +58,16 @@ export default function ContributePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="section-padding border-b border-ink/5">
+      <section className="section-padding border-b border-card-border">
         <div className="max-w-4xl mx-auto px-6">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-amber-warm mb-4">
+            <span className="label-text mb-4 inline-block">
               Contribute
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-ink mb-6 leading-tight">
+            <h1 className="font-heading text-4xl md:text-5xl font-bold uppercase text-black mb-6 leading-tight">
               Build the curriculum with us
             </h1>
-            <p className="text-lg text-slate-deep/80 leading-relaxed">
+            <p className="text-lg text-text-primary/80 leading-relaxed">
               This curriculum is built by the community — parents, teachers, farmers, engineers, and domain experts who know what children actually need.
               You don&apos;t need to know Git. You just need something to teach or something to improve.
             </p>
@@ -78,10 +78,10 @@ export default function ContributePage() {
       {/* Contribution paths */}
       <section className="section-padding">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="font-serif text-2xl font-semibold text-ink mb-2">
+          <h2 className="font-heading text-2xl font-bold uppercase text-black mb-2">
             How would you like to contribute?
           </h2>
-          <p className="text-sm text-slate-deep/60 mb-8">
+          <p className="text-sm text-text-secondary/60 mb-8">
             Choose a path below. Each one takes about 5–15 minutes.
           </p>
 
@@ -91,14 +91,14 @@ export default function ContributePage() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-1 text-left px-5 py-4 rounded-xl border-2 transition-all ${
+                className={`flex-1 text-left px-5 py-4 border-2 transition-all ${
                   activeTab === tab.id
-                    ? "border-amber-warm bg-amber-warm/5 text-ink"
-                    : "border-ink/10 bg-white text-slate-deep hover:border-amber-warm/40"
+                    ? "border-red bg-red/5 text-black"
+                    : "border-card-border bg-white text-text-secondary hover:border-red/40"
                 }`}
               >
-                <span className="block text-sm font-semibold mb-0.5">{tab.label}</span>
-                <span className="block text-xs text-slate-deep/60 leading-snug">
+                <span className="block font-mono text-xs uppercase tracking-wider font-semibold mb-0.5">{tab.label}</span>
+                <span className="block text-xs text-text-secondary/60 leading-snug">
                   {tab.headline}
                 </span>
               </button>
@@ -106,12 +106,12 @@ export default function ContributePage() {
           </div>
 
           {/* Active form panel */}
-          <div className="bg-white border border-ink/10 rounded-2xl p-6 md:p-8">
+          <div className="bg-white border border-card-border p-6 md:p-8">
             <div className="mb-6">
-              <h3 className="font-serif text-xl font-semibold text-ink mb-1">
+              <h3 className="font-heading text-xl font-bold uppercase text-black mb-1">
                 {activeTabData.label}
               </h3>
-              <p className="text-sm text-slate-deep/70">{activeTabData.description}</p>
+              <p className="text-sm text-text-secondary/70">{activeTabData.description}</p>
             </div>
 
             {activeTab === "idea" && <IdeaForm />}
@@ -122,19 +122,19 @@ export default function ContributePage() {
       </section>
 
       {/* Contributor guidelines */}
-      <section className="section-padding bg-ink/2 border-t border-ink/5">
+      <section className="section-padding bg-black/2 border-t border-card-border">
         <div className="max-w-4xl mx-auto px-6">
           <div className="mb-8">
-            <h2 className="font-serif text-2xl font-semibold text-ink mb-2">
+            <h2 className="font-heading text-2xl font-bold uppercase text-black mb-2">
               Contributor guidelines
             </h2>
-            <p className="text-sm text-slate-deep/60">
+            <p className="text-sm text-text-secondary/60">
               What you need to know before submitting.{" "}
               <a
                 href="https://github.com/coreyepstein/new-american-codex/blob/main/CONTRIBUTING.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-amber-warm hover:underline"
+                className="text-red hover:underline"
               >
                 Full guidelines on GitHub →
               </a>
@@ -145,51 +145,51 @@ export default function ContributePage() {
             {GUIDELINES.map((g) => (
               <div
                 key={g.title}
-                className="bg-white border border-ink/8 rounded-xl p-5"
+                className="bg-white border border-card-border p-5"
               >
-                <h3 className="font-medium text-ink mb-1.5 text-sm">{g.title}</h3>
-                <p className="text-sm text-slate-deep/70 leading-relaxed">{g.body}</p>
+                <h3 className="font-medium text-black mb-1.5 text-sm">{g.title}</h3>
+                <p className="text-sm text-text-secondary/70 leading-relaxed">{g.body}</p>
               </div>
             ))}
           </div>
 
           {/* Contribution layers */}
-          <div className="mt-8 bg-white border border-ink/8 rounded-xl p-6">
-            <h3 className="font-serif text-lg font-semibold text-ink mb-4">
+          <div className="mt-8 bg-white border border-card-border p-6">
+            <h3 className="font-heading text-lg font-bold uppercase text-black mb-4">
               Who contributes
             </h3>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-ink/10">
-                    <th className="text-left pb-2 font-semibold text-ink pr-6">Layer</th>
-                    <th className="text-left pb-2 font-semibold text-ink pr-6">Who</th>
-                    <th className="text-left pb-2 font-semibold text-ink">What</th>
+                  <tr className="border-b border-card-border">
+                    <th className="text-left pb-2 font-mono text-xs uppercase tracking-wider font-semibold text-black pr-6">Layer</th>
+                    <th className="text-left pb-2 font-mono text-xs uppercase tracking-wider font-semibold text-black pr-6">Who</th>
+                    <th className="text-left pb-2 font-mono text-xs uppercase tracking-wider font-semibold text-black">What</th>
                   </tr>
                 </thead>
-                <tbody className="text-slate-deep/70">
-                  <tr className="border-b border-ink/5">
-                    <td className="py-2.5 pr-6 font-medium text-ink">Core Maintainers</td>
+                <tbody className="text-text-secondary/70">
+                  <tr className="border-b border-card-border">
+                    <td className="py-2.5 pr-6 font-medium text-black">Core Maintainers</td>
                     <td className="py-2.5 pr-6">Project leads</td>
                     <td className="py-2.5">Set direction, review and merge PRs</td>
                   </tr>
-                  <tr className="border-b border-ink/5">
-                    <td className="py-2.5 pr-6 font-medium text-ink">Domain Experts</td>
+                  <tr className="border-b border-card-border">
+                    <td className="py-2.5 pr-6 font-medium text-black">Domain Experts</td>
                     <td className="py-2.5 pr-6">Farmers, engineers, doctors</td>
                     <td className="py-2.5">Author expert content, review for accuracy</td>
                   </tr>
-                  <tr className="border-b border-ink/5">
-                    <td className="py-2.5 pr-6 font-medium text-ink">Parents & Teachers</td>
+                  <tr className="border-b border-card-border">
+                    <td className="py-2.5 pr-6 font-medium text-black">Parents & Teachers</td>
                     <td className="py-2.5 pr-6">Homeschool families, educators</td>
                     <td className="py-2.5">Field-test content, submit modifications</td>
                   </tr>
-                  <tr className="border-b border-ink/5">
-                    <td className="py-2.5 pr-6 font-medium text-ink">Students</td>
+                  <tr className="border-b border-card-border">
+                    <td className="py-2.5 pr-6 font-medium text-black">Students</td>
                     <td className="py-2.5 pr-6">Older learners (Apprentice+)</td>
                     <td className="py-2.5">Project showcases, peer teaching materials</td>
                   </tr>
                   <tr>
-                    <td className="py-2.5 pr-6 font-medium text-ink">Community</td>
+                    <td className="py-2.5 pr-6 font-medium text-black">Community</td>
                     <td className="py-2.5 pr-6">Anyone</td>
                     <td className="py-2.5">Ideas, corrections, translations, links</td>
                   </tr>

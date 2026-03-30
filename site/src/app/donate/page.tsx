@@ -11,13 +11,13 @@ export default function DonatePage() {
   return (
     <div className="section-padding">
       <div className="max-w-3xl mx-auto px-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.15em] text-amber-warm mb-3">
+        <p className="label-text mb-3">
           Support the Mission
         </p>
-        <h1 className="fluid-h1 font-serif font-bold text-ink mb-6">
+        <h1 className="fluid-h1 font-heading font-bold uppercase text-black mb-6">
           Help Build the Codex
         </h1>
-        <p className="fluid-body-lg text-slate-deep/70 mb-12 max-w-2xl">
+        <p className="fluid-body-lg text-text-secondary/70 mb-12 max-w-2xl">
           The New American Codex is free, open-source, and community-driven.
           Your support helps us keep it that way — and keeps the curriculum
           growing.
@@ -26,11 +26,11 @@ export default function DonatePage() {
         {/* Donation options */}
         <div className="space-y-8 mb-16">
           {/* GitHub Sponsors */}
-          <div className="bg-cream rounded-lg p-8 border border-ink/5">
-            <h2 className="font-serif text-xl font-semibold text-ink mb-3">
+          <div className="bg-card-bg p-8 border border-card-border">
+            <h2 className="font-heading text-xl font-bold uppercase text-black mb-3">
               GitHub Sponsors
             </h2>
-            <p className="text-slate-deep/70 mb-6 leading-relaxed">
+            <p className="text-text-secondary/70 mb-6 leading-relaxed">
               The simplest way to support the project. GitHub Sponsors lets you
               make one-time or recurring contributions directly. Every dollar
               goes toward curriculum development and keeping the project open.
@@ -39,7 +39,7 @@ export default function DonatePage() {
               href="https://github.com/sponsors/coreyepstein"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-amber-warm text-ink font-semibold text-sm rounded-lg hover:bg-amber-light transition-colors"
+              className="inline-flex items-center gap-2 bg-red text-offwhite font-mono text-xs uppercase tracking-[0.15em] px-8 py-3.5 hover:bg-red/90 transition-colors"
             >
               <svg
                 width="20"
@@ -58,11 +58,11 @@ export default function DonatePage() {
           </div>
 
           {/* Future Stripe */}
-          <div className="bg-parchment rounded-lg p-8 border border-ink/5">
-            <h2 className="font-serif text-xl font-semibold text-ink mb-3">
+          <div className="bg-offwhite p-8 border border-card-border">
+            <h2 className="font-heading text-xl font-bold uppercase text-black mb-3">
               Direct Donations
             </h2>
-            <p className="text-slate-deep/70 leading-relaxed">
+            <p className="text-text-secondary/70 leading-relaxed">
               We&apos;re working on setting up direct donation processing for
               those who prefer it. In the meantime, GitHub Sponsors is the best
               way to contribute. Check back soon for additional options.
@@ -72,7 +72,7 @@ export default function DonatePage() {
 
         {/* What your support does */}
         <section className="mb-16">
-          <h2 className="font-serif text-xl font-semibold text-ink mb-6">
+          <h2 className="font-heading text-xl font-bold uppercase text-black mb-6">
             What Your Support Makes Possible
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -95,10 +95,10 @@ export default function DonatePage() {
               },
             ].map((item) => (
               <div key={item.title}>
-                <h3 className="font-serif font-semibold text-base text-ink mb-2">
+                <h3 className="font-heading font-bold uppercase text-base text-black mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-slate-deep/70 leading-relaxed">
+                <p className="text-sm text-text-secondary/70 leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -107,13 +107,13 @@ export default function DonatePage() {
         </section>
 
         {/* Mission statement */}
-        <section className="border-t border-ink/10 pt-12 text-center">
-          <blockquote className="font-serif text-xl md:text-2xl text-ink font-medium italic leading-relaxed max-w-xl mx-auto">
+        <section className="border-t border-card-border pt-12 text-center">
+          <blockquote className="font-body text-xl md:text-2xl text-black font-medium italic leading-relaxed max-w-xl mx-auto">
             &ldquo;The test of a civilization is in the way it cares for its
             helpless members — and in the way it prepares its young to be
             anything but helpless.&rdquo;
           </blockquote>
-          <p className="text-sm text-slate-deep/50 mt-6">
+          <p className="text-sm text-text-secondary/50 mt-6">
             Thank you for believing in this work.
           </p>
         </section>

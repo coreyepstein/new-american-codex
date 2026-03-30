@@ -51,10 +51,10 @@ export function PersonalizePage() {
         {state.kind === "idle" && (
           <div className="animate-fade-in-up">
             <div className="text-center mb-10">
-              <h1 className="font-serif fluid-h2 font-bold text-ink mb-4">
+              <h1 className="font-heading fluid-h2 font-bold text-black uppercase mb-4">
                 Personalize Your Week
               </h1>
-              <p className="fluid-body-lg text-slate-deep/70 max-w-2xl mx-auto">
+              <p className="fluid-body-lg text-text-secondary max-w-2xl mx-auto font-body">
                 Tell us about your child, and we&rsquo;ll generate a
                 personalized week of curriculum themed to their interests.
               </p>
@@ -67,17 +67,17 @@ export function PersonalizePage() {
           <div className="flex flex-col items-center justify-center py-20 animate-fade-in-up">
             {/* Pulsing book icon */}
             <div className="relative mb-8">
-              <div className="w-20 h-20 rounded-full bg-amber-warm/10 flex items-center justify-center animate-pulse">
+              <div className="w-20 h-20 bg-red/10 flex items-center justify-center animate-pulse">
                 <span className="text-4xl" role="img" aria-label="Generating">
                   &#128218;
                 </span>
               </div>
-              <div className="absolute inset-0 w-20 h-20 rounded-full border-2 border-amber-warm/20 animate-ping" />
+              <div className="absolute inset-0 w-20 h-20 border-2 border-red/20 animate-ping" />
             </div>
-            <h2 className="font-serif text-xl font-semibold text-ink mb-2">
+            <h2 className="font-heading text-xl font-semibold text-black uppercase mb-2">
               Generating your personalized week&hellip;
             </h2>
-            <p className="text-sm text-slate-deep/60 mb-6">
+            <p className="text-sm text-text-secondary font-body mb-6">
               This typically takes 15&ndash;30 seconds.
             </p>
             {/* Skeleton cards */}
@@ -85,15 +85,15 @@ export function PersonalizePage() {
               {[1, 2, 3, 4, 5].map((i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-xl border border-ink/5 p-5 animate-pulse"
+                  className="industrial-card p-5 animate-pulse"
                   style={{ animationDelay: `${i * 150}ms` }}
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-16 h-5 bg-cream rounded-full" />
-                    <div className="w-24 h-5 bg-cream rounded-full" />
+                    <div className="w-16 h-5 bg-card-bg" />
+                    <div className="w-24 h-5 bg-card-bg" />
                   </div>
-                  <div className="h-5 bg-cream rounded w-3/4 mb-2" />
-                  <div className="h-4 bg-cream/60 rounded w-1/2" />
+                  <div className="h-5 bg-card-bg w-3/4 mb-2" />
+                  <div className="h-4 bg-card-bg/60 w-1/2" />
                 </div>
               ))}
             </div>
@@ -106,7 +106,7 @@ export function PersonalizePage() {
             <div className="text-center mt-10">
               <button
                 onClick={() => setState({ kind: "idle" })}
-                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-amber-warm border border-amber-warm/30 rounded-lg hover:bg-amber-warm/5 transition-colors no-print"
+                className="inline-flex items-center gap-2 px-6 py-3 font-mono text-xs uppercase tracking-[0.15em] font-semibold text-red border border-red/30 hover:bg-red/5 transition-colors no-print"
               >
                 <svg
                   className="w-4 h-4"
@@ -129,7 +129,7 @@ export function PersonalizePage() {
 
         {state.kind === "error" && (
           <div className="flex flex-col items-center justify-center py-20 animate-fade-in-up">
-            <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mb-6">
+            <div className="w-16 h-16 bg-red-50 flex items-center justify-center mb-6">
               <svg
                 className="w-8 h-8 text-red-500"
                 fill="none"
@@ -144,15 +144,15 @@ export function PersonalizePage() {
                 />
               </svg>
             </div>
-            <h2 className="font-serif text-xl font-semibold text-ink mb-2">
+            <h2 className="font-heading text-xl font-semibold text-black uppercase mb-2">
               Something went wrong
             </h2>
-            <p className="text-sm text-slate-deep/60 mb-6 text-center max-w-md">
+            <p className="text-sm text-text-secondary font-body mb-6 text-center max-w-md">
               {state.message}
             </p>
             <button
               onClick={() => setState({ kind: "idle" })}
-              className="px-6 py-3 bg-amber-warm text-ink font-semibold text-sm rounded-lg hover:bg-amber-light transition-colors"
+              className="px-6 py-3 bg-red text-offwhite font-mono text-xs uppercase tracking-[0.15em] hover:bg-red/90 transition-colors"
             >
               Try Again
             </button>

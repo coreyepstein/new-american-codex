@@ -43,10 +43,10 @@ type FormState =
   | { kind: "error"; message: string };
 
 const inputClass =
-  "w-full border border-ink/20 rounded-lg px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-amber-warm/40 focus:border-amber-warm transition-colors";
-const labelClass = "block text-sm font-medium text-slate-deep mb-1";
+  "w-full border border-card-border px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red focus:border-red transition-colors";
+const labelClass = "block font-mono text-xs uppercase tracking-wider font-bold text-text-primary mb-1";
 const selectClass =
-  "w-full border border-ink/20 rounded-lg px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-amber-warm/40 focus:border-amber-warm transition-colors";
+  "w-full border border-card-border px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red focus:border-red transition-colors";
 
 export function ContentForm() {
   const [title, setTitle] = useState("");
@@ -111,12 +111,12 @@ export function ContentForm() {
 
   if (formState.kind === "success") {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
+      <div className="bg-navy/5 border border-navy/20 p-8 text-center">
         <div className="text-3xl mb-3">✓</div>
-        <h3 className="font-serif text-xl font-semibold text-ink mb-2">
+        <h3 className="font-heading text-xl font-semibold text-black uppercase mb-2">
           Content submitted!
         </h3>
-        <p className="text-sm text-slate-deep mb-4">
+        <p className="text-sm text-text-secondary font-body mb-4">
           A draft pull request has been created. A maintainer will review it and may follow up with feedback.
         </p>
         {formState.result.url && formState.result.url !== "#" && (
@@ -124,7 +124,7 @@ export function ContentForm() {
             href={formState.result.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-amber-warm hover:underline"
+            className="inline-flex items-center gap-2 text-sm font-medium text-red hover:underline"
           >
             View Draft PR #{formState.result.number} on GitHub →
           </a>
@@ -229,7 +229,7 @@ export function ContentForm() {
         <label className={labelClass} htmlFor="content-objectives">
           Learning objectives <span className="text-red-500">*</span>
         </label>
-        <p className="text-xs text-slate-deep/60 mb-1.5">
+        <p className="text-xs text-text-secondary font-body mb-1.5">
           One per line. Be specific: &ldquo;Identify three fire-starting methods&rdquo; not &ldquo;Learn about fire&rdquo;.
         </p>
         <textarea
@@ -248,7 +248,7 @@ export function ContentForm() {
           <label className={labelClass} htmlFor="content-materials">
             Materials <span className="text-red-500">*</span>
           </label>
-          <p className="text-xs text-slate-deep/60 mb-1.5">One per line.</p>
+          <p className="text-xs text-text-secondary font-body mb-1.5">One per line.</p>
           <textarea
             id="content-materials"
             className={`${inputClass} h-28 resize-none`}
@@ -264,7 +264,7 @@ export function ContentForm() {
           <label className={labelClass} htmlFor="content-duration">
             Duration <span className="text-red-500">*</span>
           </label>
-          <p className="text-xs text-slate-deep/60 mb-1.5">Estimated time.</p>
+          <p className="text-xs text-text-secondary font-body mb-1.5">Estimated time.</p>
           <input
             id="content-duration"
             type="text"
@@ -282,7 +282,7 @@ export function ContentForm() {
         <label className={labelClass} htmlFor="content-body">
           Content body <span className="text-red-500">*</span>
         </label>
-        <p className="text-xs text-slate-deep/60 mb-1.5">
+        <p className="text-xs text-text-secondary font-body mb-1.5">
           Write the full content using Markdown. Include an introduction, step-by-step instructions, and any safety notes.
         </p>
         <textarea
@@ -299,7 +299,7 @@ export function ContentForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className={labelClass} htmlFor="content-name">
-            Your name <span className="text-ink/40 font-normal">(optional)</span>
+            Your name <span className="text-text-secondary font-normal">(optional)</span>
           </label>
           <input
             id="content-name"
@@ -314,7 +314,7 @@ export function ContentForm() {
 
         <div>
           <label className={labelClass} htmlFor="content-email">
-            Email <span className="text-ink/40 font-normal">(optional)</span>
+            Email <span className="text-text-secondary font-normal">(optional)</span>
           </label>
           <input
             id="content-email"
@@ -329,7 +329,7 @@ export function ContentForm() {
       </div>
 
       {formState.kind === "error" && (
-        <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+        <p className="text-sm text-red bg-red/5 border border-red/20 px-4 py-3">
           {formState.message}
         </p>
       )}
@@ -337,12 +337,12 @@ export function ContentForm() {
       <button
         type="submit"
         disabled={formState.kind === "loading" || !isValid}
-        className="w-full bg-amber-warm text-white font-medium py-3 px-6 rounded-lg hover:bg-amber-warm/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        className="w-full bg-red text-offwhite font-mono text-xs uppercase tracking-[0.15em] py-3 px-6 hover:bg-red/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
       >
         {formState.kind === "loading" ? "Submitting…" : "Submit Content Draft"}
       </button>
 
-      <p className="text-xs text-slate-deep/50 text-center">
+      <p className="text-xs text-text-secondary text-center font-body">
         This creates a draft pull request on GitHub. A maintainer will review it before it goes live.
       </p>
     </form>

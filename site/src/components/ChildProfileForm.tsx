@@ -95,10 +95,10 @@ export function ChildProfileForm({ onSubmit }: ChildProfileFormProps) {
       <div>
         <label
           htmlFor="child-name"
-          className="block font-serif font-semibold text-ink text-lg mb-2"
+          className="block font-mono text-xs uppercase tracking-wider text-text-primary font-bold mb-2"
         >
           Child&rsquo;s Name{" "}
-          <span className="text-sm font-sans font-normal text-slate-deep/50">
+          <span className="text-xs font-mono font-normal text-text-secondary">
             (optional)
           </span>
         </label>
@@ -109,16 +109,16 @@ export function ChildProfileForm({ onSubmit }: ChildProfileFormProps) {
           onChange={(e) => setChildName(e.target.value)}
           maxLength={50}
           placeholder="e.g. Luna"
-          className="w-full px-5 py-3.5 bg-white border border-ink/10 rounded-lg text-ink placeholder:text-slate-deep/40 focus:outline-none focus:ring-2 focus:ring-amber-warm/40 focus:border-amber-warm transition-shadow"
+          className="w-full px-5 py-3.5 bg-white border border-card-border text-black placeholder:text-text-secondary/60 focus:outline-none focus:ring-2 focus:ring-red focus:border-red transition-shadow"
         />
       </div>
 
       {/* Interests */}
       <fieldset>
-        <legend className="block font-serif font-semibold text-ink text-lg mb-1">
+        <legend className="block font-mono text-xs uppercase tracking-wider text-text-primary font-bold mb-1">
           Interests
         </legend>
-        <p className="text-sm text-slate-deep/60 mb-4">
+        <p className="text-sm text-text-secondary font-body mb-4">
           Select up to {MAX_INTERESTS} topics your child loves. You can also add your own.
         </p>
 
@@ -135,12 +135,12 @@ export function ChildProfileForm({ onSubmit }: ChildProfileFormProps) {
                 disabled={disabled}
                 aria-pressed={selected}
                 aria-label={`${interest}${selected ? " (selected)" : ""}`}
-                className={`rounded-full px-3 py-1.5 text-sm border transition-colors ${
+                className={`px-3 py-1.5 text-sm border transition-colors ${
                   selected
-                    ? "bg-amber-warm/10 border-amber-warm text-amber-warm font-medium"
+                    ? "bg-red/10 border-red text-red font-medium"
                     : disabled
-                      ? "bg-white border-ink/5 text-slate-deep/30 cursor-not-allowed"
-                      : "bg-white border-ink/10 text-slate-deep cursor-pointer hover:border-amber-warm/30 hover:text-amber-warm"
+                      ? "bg-white border-card-border text-text-secondary/30 cursor-not-allowed"
+                      : "bg-white border-card-border text-text-primary cursor-pointer hover:border-red/30 hover:text-red"
                 }`}
               >
                 {interest}
@@ -160,13 +160,13 @@ export function ChildProfileForm({ onSubmit }: ChildProfileFormProps) {
             placeholder="Add a custom interest..."
             disabled={interests.length >= MAX_INTERESTS}
             aria-label="Custom interest"
-            className="flex-1 px-4 py-2.5 bg-white border border-ink/10 rounded-lg text-sm text-ink placeholder:text-slate-deep/40 focus:outline-none focus:ring-2 focus:ring-amber-warm/40 focus:border-amber-warm transition-shadow disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 px-4 py-2.5 bg-white border border-card-border text-sm text-black placeholder:text-text-secondary/60 focus:outline-none focus:ring-2 focus:ring-red focus:border-red transition-shadow disabled:opacity-50 disabled:cursor-not-allowed"
           />
           <button
             type="button"
             onClick={addCustomInterest}
             disabled={!customInterest.trim() || interests.length >= MAX_INTERESTS}
-            className="px-4 py-2.5 bg-cream border border-ink/10 rounded-lg text-sm font-medium text-slate-deep hover:bg-amber-warm/10 hover:border-amber-warm/30 hover:text-amber-warm transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            className="px-4 py-2.5 bg-card-bg border border-card-border text-sm font-medium text-text-primary hover:bg-red/10 hover:border-red/30 hover:text-red transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           >
             Add
           </button>
@@ -178,14 +178,14 @@ export function ChildProfileForm({ onSubmit }: ChildProfileFormProps) {
             {interests.map((interest) => (
               <span
                 key={interest}
-                className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm bg-amber-warm/10 border border-amber-warm text-amber-warm font-medium"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-red/10 border border-red text-red font-medium"
               >
                 {interest}
                 <button
                   type="button"
                   onClick={() => removeInterest(interest)}
                   aria-label={`Remove ${interest}`}
-                  className="ml-0.5 text-amber-warm/60 hover:text-amber-warm transition-colors"
+                  className="ml-0.5 text-red/60 hover:text-red transition-colors"
                 >
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M6 18L18 6M6 6l12 12" strokeWidth="2" strokeLinecap="round" />
@@ -193,7 +193,7 @@ export function ChildProfileForm({ onSubmit }: ChildProfileFormProps) {
                 </button>
               </span>
             ))}
-            <span className="text-xs text-slate-deep/40 self-center">
+            <span className="text-xs text-text-secondary self-center font-mono">
               {interests.length}/{MAX_INTERESTS}
             </span>
           </div>
@@ -204,18 +204,18 @@ export function ChildProfileForm({ onSubmit }: ChildProfileFormProps) {
       <div>
         <label
           htmlFor="stage-select"
-          className="block font-serif font-semibold text-ink text-lg mb-2"
+          className="block font-mono text-xs uppercase tracking-wider text-text-primary font-bold mb-2"
         >
           Stage
         </label>
-        <p className="text-sm text-slate-deep/60 mb-3">
+        <p className="text-sm text-text-secondary font-body mb-3">
           Choose the developmental stage that best fits your child.
         </p>
         <select
           id="stage-select"
           value={stage}
           onChange={(e) => setStage(e.target.value)}
-          className="w-full px-5 py-3.5 bg-white border border-ink/10 rounded-lg text-ink appearance-none focus:outline-none focus:ring-2 focus:ring-amber-warm/40 focus:border-amber-warm transition-shadow"
+          className="w-full px-5 py-3.5 bg-white border border-card-border text-black appearance-none focus:outline-none focus:ring-2 focus:ring-red focus:border-red transition-shadow"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a5568'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
             backgroundRepeat: "no-repeat",
@@ -234,10 +234,10 @@ export function ChildProfileForm({ onSubmit }: ChildProfileFormProps) {
 
       {/* Learning Modality */}
       <fieldset>
-        <legend className="block font-serif font-semibold text-ink text-lg mb-2">
+        <legend className="block font-mono text-xs uppercase tracking-wider text-text-primary font-bold mb-2">
           Learning Style
         </legend>
-        <p className="text-sm text-slate-deep/60 mb-4">
+        <p className="text-sm text-text-secondary font-body mb-4">
           How does your child learn best?
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -246,10 +246,10 @@ export function ChildProfileForm({ onSubmit }: ChildProfileFormProps) {
             return (
               <label
                 key={m.value}
-                className={`flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all ${
+                className={`flex items-start gap-3 p-4 border cursor-pointer transition-all ${
                   selected
-                    ? "bg-amber-warm/5 border-amber-warm shadow-sm"
-                    : "bg-white border-ink/10 hover:border-amber-warm/30"
+                    ? "bg-red/5 border-red shadow-sm"
+                    : "bg-white border-card-border hover:border-red/30"
                 }`}
               >
                 <input
@@ -258,14 +258,14 @@ export function ChildProfileForm({ onSubmit }: ChildProfileFormProps) {
                   value={m.value}
                   checked={selected}
                   onChange={() => setModality(m.value)}
-                  className="mt-1 accent-amber-warm"
+                  className="mt-1 accent-red"
                   aria-label={m.label}
                 />
                 <div>
-                  <span className="block text-sm font-semibold text-ink">
+                  <span className="block text-sm font-semibold text-black">
                     {m.label}
                   </span>
-                  <span className="block text-xs text-slate-deep/60 mt-0.5">
+                  <span className="block text-xs text-text-secondary mt-0.5">
                     {m.description}
                   </span>
                 </div>
@@ -280,12 +280,12 @@ export function ChildProfileForm({ onSubmit }: ChildProfileFormProps) {
         <button
           type="submit"
           disabled={!isValid}
-          className="w-full sm:w-auto px-8 py-3.5 bg-amber-warm text-ink font-semibold text-sm rounded-lg hover:bg-amber-light disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="w-full sm:w-auto px-8 py-3.5 bg-red text-offwhite font-mono text-xs uppercase tracking-[0.15em] hover:bg-red/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           Generate My Week
         </button>
         {!isValid && (
-          <p className="text-xs text-slate-deep/50 mt-2">
+          <p className="text-xs text-text-secondary mt-2 font-body">
             Please select at least one interest, a stage, and a learning style.
           </p>
         )}

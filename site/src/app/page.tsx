@@ -30,13 +30,13 @@ export default function HomePage() {
       {/* Philosophy section */}
       <section className="section-padding">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-center text-sm font-semibold uppercase tracking-[0.15em] text-amber-warm mb-3">
+          <p className="label-text text-center mb-3">
             Three Foundations
           </p>
-          <h2 className="fluid-h2 font-serif font-bold text-ink text-center mb-4">
+          <h2 className="fluid-h2 font-heading font-bold text-black text-center mb-4">
             What We Believe
           </h2>
-          <p className="text-center text-slate-deep/60 max-w-2xl mx-auto mb-16 leading-relaxed">
+          <p className="text-center text-text-secondary/60 max-w-2xl mx-auto mb-16 leading-relaxed">
             The Codex stands on three philosophical pillars that shape every
             lesson, every activity, every conversation.
           </p>
@@ -44,10 +44,10 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10">
             {philosophies.map((p) => (
               <div key={p.title}>
-                <h3 className="font-serif text-xl font-semibold text-ink mb-3">
+                <h3 className="font-heading text-xl font-bold uppercase text-black mb-3">
                   {p.title}
                 </h3>
-                <p className="text-sm text-slate-deep/70 leading-relaxed">
+                <p className="text-sm text-text-secondary/70 leading-relaxed">
                   {p.description}
                 </p>
               </div>
@@ -57,16 +57,16 @@ export default function HomePage() {
       </section>
 
       {/* Pillars preview */}
-      <section className="bg-cream section-padding">
+      <section className="bg-card-bg section-padding">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="font-serif text-7xl font-bold text-amber-warm/20">
+            <span className="font-heading text-7xl font-bold text-red/20">
               8
             </span>
-            <h2 className="fluid-h2 font-serif font-bold text-ink -mt-4 mb-4">
+            <h2 className="fluid-h2 font-heading font-bold text-black -mt-4 mb-4">
               Pillars of the Codex
             </h2>
-            <p className="text-slate-deep/60 max-w-xl mx-auto leading-relaxed">
+            <p className="text-text-secondary/60 max-w-xl mx-auto leading-relaxed">
               Every child deserves competence across all eight domains — not
               just academics.
             </p>
@@ -87,7 +87,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link
               href="/framework"
-              className="inline-flex items-center gap-2 text-amber-warm font-semibold text-sm hover:text-amber-deep transition-colors"
+              className="inline-flex items-center gap-2 text-red font-semibold text-sm hover:text-red/80 transition-colors"
             >
               Explore the full framework
               <span aria-hidden="true">&rarr;</span>
@@ -100,12 +100,12 @@ export default function HomePage() {
       <EmailSignup />
 
       {/* Core values */}
-      <section className="section-padding-sm bg-parchment">
+      <section className="section-padding-sm bg-offwhite">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-deep/40 mb-6">
+          <p className="label-text mb-6">
             Core Values
           </p>
-          <p className="font-serif text-2xl md:text-3xl text-ink font-semibold tracking-tight">
+          <p className="font-heading text-2xl md:text-3xl uppercase tracking-wider text-black font-semibold">
             Independence &middot; Creativity &middot; Curiosity &middot;
             Confidence &middot; Strength
           </p>
@@ -113,18 +113,18 @@ export default function HomePage() {
       </section>
 
       {/* Donate CTA */}
-      <section className="bg-ink text-parchment section-padding-sm">
+      <section className="bg-black text-offwhite section-padding-sm">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="font-serif text-2xl font-semibold mb-4">
+          <h2 className="font-heading text-2xl font-bold uppercase mb-4">
             Help Build the Codex
           </h2>
-          <p className="text-parchment/60 mb-8 leading-relaxed">
+          <p className="text-offwhite/60 mb-8 leading-relaxed">
             This is a community project. Your support helps us keep the
             curriculum free, open, and growing.
           </p>
           <Link
             href="/donate"
-            className="inline-flex items-center justify-center px-8 py-3.5 bg-amber-warm text-ink font-semibold text-sm rounded-lg hover:bg-amber-light transition-colors"
+            className="inline-flex items-center justify-center bg-red text-offwhite font-mono text-xs uppercase tracking-[0.15em] px-8 py-3.5 hover:bg-red/90 transition-colors"
           >
             Support the Project
           </Link>

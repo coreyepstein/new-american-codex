@@ -10,8 +10,8 @@ type FormState =
   | { kind: "error"; message: string };
 
 const inputClass =
-  "w-full border border-ink/20 rounded-lg px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-amber-warm/40 focus:border-amber-warm transition-colors";
-const labelClass = "block text-sm font-medium text-slate-deep mb-1";
+  "w-full border border-card-border px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red focus:border-red transition-colors";
+const labelClass = "block font-mono text-xs uppercase tracking-wider font-bold text-text-primary mb-1";
 
 export function IssueForm() {
   const [contentUnit, setContentUnit] = useState("");
@@ -56,12 +56,12 @@ export function IssueForm() {
 
   if (formState.kind === "success") {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
+      <div className="bg-navy/5 border border-navy/20 p-8 text-center">
         <div className="text-3xl mb-3">✓</div>
-        <h3 className="font-serif text-xl font-semibold text-ink mb-2">
+        <h3 className="font-heading text-xl font-semibold text-black uppercase mb-2">
           Report submitted!
         </h3>
-        <p className="text-sm text-slate-deep mb-4">
+        <p className="text-sm text-text-secondary font-body mb-4">
           Safety concerns are prioritized and reviewed immediately. Thank you for helping keep the curriculum accurate and safe.
         </p>
         {formState.result.url && formState.result.url !== "#" && (
@@ -69,7 +69,7 @@ export function IssueForm() {
             href={formState.result.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-amber-warm hover:underline"
+            className="inline-flex items-center gap-2 text-sm font-medium text-red hover:underline"
           >
             View Issue #{formState.result.number} on GitHub →
           </a>
@@ -92,7 +92,7 @@ export function IssueForm() {
         className="absolute opacity-0 pointer-events-none h-0 w-0 overflow-hidden"
       />
 
-      <div className="bg-amber-warm/5 border border-amber-warm/20 rounded-lg px-4 py-3 text-sm text-slate-deep">
+      <div className="bg-red/5 border border-red/20 px-4 py-3 text-sm text-text-primary">
         <strong>Safety concerns are treated with the highest priority.</strong> If content could physically harm a child, flag it here and it will be reviewed immediately.
       </div>
 
@@ -110,7 +110,7 @@ export function IssueForm() {
           maxLength={300}
           required
         />
-        <p className="text-xs text-slate-deep/50 mt-1">
+        <p className="text-xs text-text-secondary mt-1 font-body">
           The title, URL, or file path of the content with the issue.
         </p>
       </div>
@@ -132,7 +132,7 @@ export function IssueForm() {
 
       <div>
         <label className={labelClass} htmlFor="issue-fix">
-          Suggested fix <span className="text-ink/40 font-normal">(optional)</span>
+          Suggested fix <span className="text-text-secondary font-normal">(optional)</span>
         </label>
         <textarea
           id="issue-fix"
@@ -147,7 +147,7 @@ export function IssueForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className={labelClass} htmlFor="issue-name">
-            Your name <span className="text-ink/40 font-normal">(optional)</span>
+            Your name <span className="text-text-secondary font-normal">(optional)</span>
           </label>
           <input
             id="issue-name"
@@ -162,7 +162,7 @@ export function IssueForm() {
 
         <div>
           <label className={labelClass} htmlFor="issue-email">
-            Email <span className="text-ink/40 font-normal">(optional)</span>
+            Email <span className="text-text-secondary font-normal">(optional)</span>
           </label>
           <input
             id="issue-email"
@@ -177,7 +177,7 @@ export function IssueForm() {
       </div>
 
       {formState.kind === "error" && (
-        <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+        <p className="text-sm text-red bg-red/5 border border-red/20 px-4 py-3">
           {formState.message}
         </p>
       )}
@@ -185,7 +185,7 @@ export function IssueForm() {
       <button
         type="submit"
         disabled={formState.kind === "loading" || !contentUnit.trim() || !description.trim()}
-        className="w-full bg-amber-warm text-white font-medium py-3 px-6 rounded-lg hover:bg-amber-warm/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        className="w-full bg-red text-offwhite font-mono text-xs uppercase tracking-[0.15em] py-3 px-6 hover:bg-red/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
       >
         {formState.kind === "loading" ? "Submitting…" : "Submit Report"}
       </button>
