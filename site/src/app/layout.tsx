@@ -4,6 +4,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://thenewamerican.org"),
   title: "The New American Codex",
   description:
     "An open-source curriculum for raising capable, self-governing humans — from pregnancy through age 18.",
