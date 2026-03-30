@@ -8,13 +8,19 @@ import type {
 import { ChildProfileForm } from "@/components/ChildProfileForm";
 import { PersonalizedWeek } from "@/components/PersonalizedWeek";
 
+
 type PageState =
   | { kind: "idle" }
   | { kind: "loading" }
   | { kind: "done"; response: PersonalizeResponse }
   | { kind: "error"; message: string };
 
-export function PersonalizePage() {
+interface PersonalizePageProps {
+  defaultStage?: string;
+  defaultModality?: string;
+}
+
+export function PersonalizePage({ defaultStage, defaultModality }: PersonalizePageProps) {
   const [state, setState] = useState<PageState>({ kind: "idle" });
 
   async function handleSubmit(profile: ChildProfileRequest) {
@@ -59,7 +65,11 @@ export function PersonalizePage() {
                 personalized week of curriculum themed to their interests.
               </p>
             </div>
-            <ChildProfileForm onSubmit={handleSubmit} />
+            <ChildProfileForm
+              onSubmit={handleSubmit}
+              defaultStage={defaultStage}
+              defaultModality={defaultModality as ChildProfileRequest["learningModality"] | undefined}
+            />
           </div>
         )}
 
@@ -103,10 +113,10 @@ export function PersonalizePage() {
         {state.kind === "done" && (
           <div className="animate-fade-in-up">
             <PersonalizedWeek response={state.response} />
-            <div className="text-center mt-10">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 no-print">
               <button
                 onClick={() => setState({ kind: "idle" })}
-                className="inline-flex items-center gap-2 px-6 py-3 font-mono text-xs uppercase tracking-[0.15em] font-semibold text-red border border-red/30 hover:bg-red/5 transition-colors no-print"
+                className="inline-flex items-center gap-2 px-6 py-3 font-mono text-xs uppercase tracking-[0.15em] font-semibold text-red border border-red/30 hover:bg-red/5 transition-colors"
               >
                 <svg
                   className="w-4 h-4"

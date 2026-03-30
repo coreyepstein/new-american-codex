@@ -7,6 +7,16 @@ export const metadata: Metadata = {
     "Generate a personalized week of curriculum tailored to your child's interests and learning style.",
 };
 
-export default function Page() {
-  return <PersonalizePage />;
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: Promise<{ stage?: string; modality?: string }>;
+}) {
+  const params = await searchParams;
+  return (
+    <PersonalizePage
+      defaultStage={params.stage}
+      defaultModality={params.modality}
+    />
+  );
 }

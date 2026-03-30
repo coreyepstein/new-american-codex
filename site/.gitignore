@@ -19,3 +19,7 @@ data/signups.json
 # misc
 .DS_Store
 .vercel
+.env*.local
+
+# clerk configuration (can include secrets)
+/.clerk/
