@@ -7,7 +7,7 @@ import type {
 } from "@/lib/types/personalize";
 import { ChildProfileForm } from "@/components/ChildProfileForm";
 import { PersonalizedWeek } from "@/components/PersonalizedWeek";
-
+import { SavePlanButton } from "@/components/SavePlanButton";
 
 type PageState =
   | { kind: "idle" }
@@ -18,9 +18,10 @@ type PageState =
 interface PersonalizePageProps {
   defaultStage?: string;
   defaultModality?: string;
+  childId?: string;
 }
 
-export function PersonalizePage({ defaultStage, defaultModality }: PersonalizePageProps) {
+export function PersonalizePage({ defaultStage, defaultModality, childId }: PersonalizePageProps) {
   const [state, setState] = useState<PageState>({ kind: "idle" });
 
   async function handleSubmit(profile: ChildProfileRequest) {
@@ -30,7 +31,7 @@ export function PersonalizePage({ defaultStage, defaultModality }: PersonalizePa
       const res = await fetch("/api/personalize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(profile),
+        body: JSON.stringify({ ...profile, childId }),
       });
 
       if (!res.ok) {
@@ -114,6 +115,15 @@ export function PersonalizePage({ defaultStage, defaultModality }: PersonalizePa
           <div className="animate-fade-in-up">
             <PersonalizedWeek response={state.response} />
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 no-print">
+              <SavePlanButton
+                planId={state.response.planId}
+                stage={state.response.stage}
+                interests={state.response.units.map((u) => u.title).slice(0, 3)}
+                childName={state.response.childName}
+                onSaved={(id) =>
+                  setState({ kind: "done", response: { ...state.response, planId: id } })
+                }
+              />
               <button
                 onClick={() => setState({ kind: "idle" })}
                 className="inline-flex items-center gap-2 px-6 py-3 font-mono text-xs uppercase tracking-[0.15em] font-semibold text-red border border-red/30 hover:bg-red/5 transition-colors"
