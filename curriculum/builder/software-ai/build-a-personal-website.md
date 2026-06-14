@@ -98,6 +98,8 @@ Every HTML file has the same skeleton:
 - `<body>` contains everything visible on the page
 - Tags come in pairs: `<h1>` opens a heading, `</h1>` closes it. Everything between them is the heading content.
 
+Learn this skeleton by heart. You will type it at the start of every page you ever build, so do not copy and paste it mindlessly — write it out by hand a few times until your fingers know it. A master carpenter does not look up how to hold a hammer. In the same way, this skeleton should become automatic for you. When a page breaks later, the first thing you will check is whether the skeleton is correct: an unclosed tag, a missing `</body>`, or a `<head>` that swallowed your content. Most beginner bugs live right here, in the bones of the page.
+
 ### Adding More Content
 
 Add these inside the `<body>`, below your paragraph:
