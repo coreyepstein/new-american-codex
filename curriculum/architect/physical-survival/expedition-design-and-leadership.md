@@ -4,11 +4,10 @@ pillar: "physical-survival"
 stage: "architect"
 content-type: project
 readiness-indicators:
-  - "Has completed multiple multi-day wilderness trips as a participant"
-  - "Has led at least one shorter expedition (Apprentice stage)"
-  - "Holds current first aid certification (Wilderness First Aid preferred)"
-  - "Can navigate confidently with map and compass in unfamiliar terrain"
+  - "Has completed multiple multi-day wilderness trips as a participant and led at least one shorter expedition"
+  - "Holds current first aid certification (Wilderness First Aid preferred) and can navigate confidently with map and compass in unfamiliar terrain"
   - "Has demonstrated sound judgment in outdoor decision-making — knows when to push and when to turn back"
+  - "Can take responsibility for the safety of other people, not just themselves, and accept that the consequences of a bad call land on the whole team"
 learning-objectives:
   - "Design a multi-week wilderness expedition from concept through execution"
   - "Lead a team through challenging conditions while managing safety, morale, and logistics"
@@ -42,6 +41,16 @@ An expedition is not a camping trip. A camping trip goes to a campground, sleeps
 This is the capstone project for the physical survival pillar. You will design an expedition from scratch — choosing the route, assembling the team, planning logistics, acquiring permits, managing a budget — and then lead it in the field. The expedition should be 7-14 days in duration, cover significant distance through challenging terrain, and involve a team of 3-6 people.
 
 This project requires real competence. Wilderness leadership is not a metaphor. Mistakes cost. You must have the experience, skills, and judgment to keep people safe in conditions that may become dangerous. If you are not ready, the readiness indicators above will tell you. There is no shame in waiting a year and building more experience first.
+
+## What Leadership Actually Demands
+
+Most people think leadership is about being in charge. It is not. Being in charge is a title; leadership is a job, and the job is responsibility. The moment you accept the role of expedition leader, you accept that the safety, the experience, and to some degree the wellbeing of every person on the team becomes your problem to solve. When someone gets cold, hungry, scared, or hurt, "that's not my fault" is true and irrelevant — it is still yours to deal with. This is the single most important mental shift you will make on this project, and it is one of the most valuable things you can learn before you launch any real venture in the world: a leader owns outcomes, including the ones they did not cause.
+
+This is heavier than it sounds from a chair at home. In the field, exhausted, in worsening weather, with people looking at you to decide, you will feel the weight of it physically. The team will watch your face. If you panic, they panic. If you go quiet and grim, morale drops within the hour. Part of the work is learning to manage *yourself* first — your fear, your fatigue, your frustration — so that you can manage everyone else. You cannot lead a team out of a hard situation while you are visibly falling apart inside it. The leaders worth following are not the ones who feel no fear; they are the ones who feel it, contain it, and keep thinking clearly anyway. You will get to practice exactly this skill, and there are very few places left in modern life where you can.
+
+There is also a difference between authority and respect, and the expedition will teach it to you fast. Authority is given to you by the structure — you are the leader, so technically you decide. Respect is earned by competence, fairness, and the willingness to do the hard and unglamorous parts yourself. A leader who has authority but no respect gets quiet resistance: people slow-walk decisions, grumble, and stop volunteering information. A leader who has earned respect gets a team that tells them the truth, covers their blind spots, and pulls hard when it matters. You earn respect by being prepared, by being calm under pressure, by carrying your share and then some, by admitting when you are wrong, and by never asking someone to do something you would not do yourself. None of that is in the gear list. All of it determines whether your expedition succeeds.
+
+Finally, understand that the team is not just a set of bodies to move through terrain — it is a small society you are responsible for governing for two weeks. People will be tired, hungry, scared, and stuck with each other in conditions that strip away politeness. Small frictions compound. How you set expectations at the start, how you distribute work, how you handle the first sign of conflict, and how you treat the slowest or most struggling member sets the tone for the entire trip. Lead the society well and the terrain becomes the only enemy. Lead it poorly and you will spend your energy fighting your own team instead of the route.
 
 ## Phase 1: Expedition Design (Months 1-2)
 
@@ -149,6 +158,20 @@ Your job as leader is not to be the strongest hiker, the best navigator, or the 
 - **Team dynamics.** Two people are not getting along. Someone is consistently slow and holding the group back. Someone is taking risks that endanger others. Address it directly, privately, and soon. Unresolved conflict in the wilderness escalates fast.
 
 - **Turning back.** The route is more dangerous than expected. The river is too high to ford. The snowfield is too steep without ice axes. The team is too exhausted to continue safely. Turning back is not failure. Pressing on when you should turn back is failure — the kind that has consequences.
+
+### A Framework for Deciding Under Uncertainty
+
+You will not have perfect information when you need to make these calls — that is what "under uncertainty" means. Waiting for certainty is itself a decision, usually a bad one, because conditions rarely improve while you stand still. What you can do is decide *well* with incomplete information, and there is a repeatable process for it that professionals use in every high-stakes field, from medicine to aviation to the military. Learn it here, on terrain where the stakes are real but bounded, and you will carry it into every consequential decision you make for the rest of your life.
+
+Work the problem in five steps, fast but in order:
+
+1. **Name the actual decision.** Not the vague worry ("the weather looks bad") but the specific choice in front of you ("do we cross this pass now, camp below it tonight, or retreat to the last sheltered site?"). A clearly stated decision is half-solved; a vague one spins in circles.
+2. **Gather what you can in the time you have.** Look at the sky, the map, the team's faces, the river level, the daylight remaining. Ask the team directly: "How is everyone feeling? Honestly." The people you lead are sensors — they often know things you have not noticed yet. Set a time limit on this step so it does not become paralysis.
+3. **Lay out the real options and their worst cases.** For each choice, ask the hard question: if this goes wrong, how wrong can it go, and can we recover from it? An option whose worst case is "uncomfortable night, lost half a day" is in a completely different category from one whose worst case is "someone in the river" or "team caught exposed in a lightning storm." Weight the irreversible and the fatal far more heavily than the merely costly.
+4. **Decide, commit, and communicate.** Make the call, say it clearly and confidently to the team, and explain the reasoning in one or two sentences. A team that understands *why* will execute a hard decision far better than one given a bare order. Commit — half-hearted execution of a sound plan is more dangerous than wholehearted execution of an adequate one.
+5. **Reassess as you go.** A decision is not a vow. New information — a break in the weather, a member fading faster than expected — can and should change the plan. Build in checkpoints: "if we are not over the pass by two o'clock, we turn around." Pre-committing to a turnaround time *before* you are tired and invested is one of the most powerful tools in the whole framework, because it takes the decision out of the hands of your future, exhausted, summit-fevered self.
+
+The hardest discipline embedded in all of this is the willingness to choose the unglamorous option. Retreating, resting a day, or aborting the objective will rarely feel heroic in the moment, and there will often be a voice — yours or the team's — arguing to push on because of how much you have already invested. That sunk-cost pull is exactly the trap that gets capable people hurt. The mark of a real leader is the ability to walk away from an objective you wanted badly because the conditions told you to, and to do it without drama or self-pity. Get good at that here, and you will be hard to beat anywhere.
 
 ### Documentation
 

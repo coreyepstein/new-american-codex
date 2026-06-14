@@ -4,17 +4,14 @@ pillar: "software-ai"
 stage: "architect"
 content-type: project
 readiness-indicators:
-  - "Has built and deployed at least one web application with real users"
-  - "Understands full-stack development: frontend, backend, database, and deployment"
-  - "Can debug complex, multi-component systems independently"
-  - "Has received feedback from real users and implemented changes based on it"
-  - "Can manage a multi-month project with self-imposed deadlines"
+  - "Has built and deployed at least one full-stack web application and can debug it across frontend, backend, and database without help"
+  - "Has received feedback from real users and changed the product in response, rather than defending the original design"
+  - "Can sustain a multi-month project on self-imposed deadlines without anyone assigning the work"
 learning-objectives:
-  - "Ship a software product from idea through public launch"
-  - "Build for users who are not yourself — understand their needs, design for their workflows"
-  - "Implement production-grade practices: error handling, monitoring, backups, and security"
-  - "Market and distribute a product — getting users is harder than building the product"
-  - "Iterate based on usage data and feedback, not assumptions"
+  - "Ship a software product from a validated problem through public launch and into ongoing maintenance"
+  - "Build for users who are not yourself — research their needs, design for their workflows, and resist building for your own taste"
+  - "Operate a product like a professional: error handling, monitoring, backups, and security that hold up when strangers use it"
+  - "Get and keep users, then iterate on usage data and feedback rather than assumptions"
 modality: hands-on
 duration: "16-24 weeks (10-20 hours per week)"
 materials:
@@ -38,7 +35,9 @@ There are millions of developers in the world who can write code. There are far 
 
 In this project, you will build and ship a real software product. Not a portfolio piece. Not a toy. A product that people use, that solves a real problem, and that you maintain and improve over time. The product does not need to be large — many successful products do one thing well. But it must be complete: it works, it is reliable, real people use it, and you are responsible for it.
 
-This is the most demanding project in the software pillar. It requires technical skill, product thinking, marketing instinct, and sustained discipline. You will spend as many hours on non-coding work (research, design, marketing, support, documentation) as on coding. That ratio is what separates a developer from a product builder.
+This is the most demanding project in the software pillar. It requires technical skill, product thinking, marketing instinct, and sustained discipline. You will spend as many hours on non-coding work — research, design, marketing, support, documentation — as on coding. That ratio is what separates a developer from a product builder, and it is the single thing most first-time builders refuse to believe until it is too late. Coding is the part that feels like progress, so it is the part you will overdo; the rest is the part that feels like overhead, so it is the part you will skip, and skipping it is exactly how a working piece of software fails to become a product anyone uses.
+
+Hold yourself to the standard of the thing, not the standard of effort. No one will grade you on how hard you worked or how clever your architecture is. The honest measure is simpler and harsher: did real people, who are not your friends, choose to use what you built, come back to it, and miss it if it disappeared? Everything in this project bends toward that question. When you are deciding what to work on, what to cut, and when to stop, ask which choice moves you closer to a stranger relying on your software. That discipline — building toward use rather than toward completeness — is what you are really here to learn.
 
 ## Phase 1: Find the Problem (Weeks 1-3)
 
@@ -48,7 +47,9 @@ Do not start with a technology. Do not start with a feature idea. Start with a p
 
 Talk to people. Not your friends — people who work, who run households, who manage teams, who create content, who organize communities. Ask them: "What is the most annoying repetitive task in your day?" "What tool do you wish existed?" "What do you currently use that frustrates you?"
 
-Write down every problem you hear. After 10-15 conversations, patterns will emerge. Three people complaining about the same thing is a signal.
+Write down every problem you hear, in the speaker's own words rather than your paraphrase, because the exact language people use to describe their pain is the language you will later use to describe your product back to them. After ten to fifteen conversations, patterns will emerge. Three unrelated people complaining about the same thing, unprompted, is a signal worth chasing. One person's vivid complaint that no one else echoes is usually a problem specific to that person, not a market.
+
+Resist the strongest temptation of this phase, which is to fall in love with a solution before you have confirmed the problem. The moment you think "I could build an app for that," your brain stops listening for the real shape of the pain and starts collecting evidence for the thing you already want to build. Stay in the problem. Keep asking how the person handles it today, what they have already tried, how much time or money it costs them, and how often it bites — because a problem people currently solve with an ugly spreadsheet and a lot of swearing is a far better opportunity than a problem they have never bothered to solve at all, which usually means it does not hurt enough to pay for a fix.
 
 ### Validating the Problem
 
@@ -102,51 +103,43 @@ Draw the architecture on paper. Show how data flows: user action in browser, req
 
 ### The Build Discipline
 
-You have 8 weeks to build version 1.0. That is not much time. Protect it ruthlessly.
+You have eight weeks to build version 1.0. That is not much time, and the surest way to waste it is to spend it building the wrong things well. The discipline of this phase is sequencing — doing the load-bearing work first and refusing the seductive work until the load-bearing work holds.
 
-**Rules:**
-1. **Build the core workflow first.** The 3-5 steps from your product definition. Nothing else until those work perfectly.
-2. **Deploy after every meaningful change.** Continuous deployment keeps you honest — if it works on your machine but not in production, you find out immediately.
-3. **Commit every day you work.** Small, frequent commits with descriptive messages. This is your safety net and your progress record.
-4. **Do not add features that are not in the product definition.** If you think of a great new feature, write it in the notebook under "Version 2.0" and keep building version 1.0.
-5. **Spend time on what users see.** Error messages, loading states, empty states, responsive design. These details separate a product from a prototype.
+Build the core workflow first, and finish it completely before you build anything else. The three to five steps from your product definition are the entire reason your product exists; until a user can move through all of them and accomplish the thing they came to do, nothing else you add has any value to attach to. It is tempting to build the settings page, the account dashboard, the dark-mode toggle — all the satisfying scaffolding around a product — because each one is a small, well-defined task you can finish in an afternoon. Resist all of it. A product where the core workflow works and nothing else is a product. A product with a beautiful settings page and a broken core workflow is a pile of code.
+
+Deploy after every meaningful change, from the very first week, so that "it works in production" is a fact you re-establish constantly rather than a terrifying event you postpone until launch. The gap between your machine and the real server is where a huge fraction of launch-day disasters live — an environment variable you set locally and forgot, a dependency that is on your laptop but not in the build, a path that works on your filesystem and not on the host's. If you deploy a hundred small changes over eight weeks, you discover each of these the moment you introduce it, when the cause is obvious. If you deploy once at the end, you discover all of them at once, tangled together, the night before you wanted to launch.
+
+Commit every day you work, in small, frequent, honestly-described commits. This is partly a safety net — the ability to walk back to the last working state when an experiment goes wrong is the difference between losing an hour and losing a weekend — and partly a record of your own progress that will keep you sane across a long project. On the weeks when it feels like nothing is happening, your commit history is the evidence that it is.
+
+Guard the scope as fiercely as you guard the time, because they are the same thing. Every feature you add is time taken from making the core workflow excellent. When a great new idea arrives mid-build, and it will, do not start building it and do not argue with yourself about it — write it in the notebook under "Version 2.0" and return to version 1.0. The notebook is not where ideas go to die; it is where they go to wait until they have earned their place, which is after real users have told you they want them. Most of the features you are sure you need in week seven will look obviously unnecessary once strangers are actually using the thing.
+
+Finally, spend real time on the parts of the product the user actually touches. The difference between a prototype and a product lives almost entirely in the states you are tempted to ignore: the error message when something fails, the loading state while they wait, the empty state before they have any data, the way the whole thing reflows on a phone. A developer testing their own happy path never sees these, which is exactly why users hit them constantly. Polishing them is not gold-plating; it is the work.
 
 ### Production Practices
 
-Your product must work reliably for people who did not build it. This requires:
+Your product has to work reliably for people who did not build it, do not know its quirks, and will not give you the benefit of the doubt. That standard is higher than "it works on my machine," and meeting it is not optional polish — it is the floor below which you do not have a product at all.
 
-**Error handling:** Every API call can fail. Every form can have bad input. Every database query can time out. Handle all of these gracefully. Show the user a clear message. Never show a stack trace.
+Start with error handling, because in production everything that can fail eventually does. Every network request can time out, every form will eventually receive input you did not anticipate, every database query can fail under load you have never tested. The amateur move is to assume the happy path and let the failure path crash; the professional move is to treat every failure as an event you have already decided how to handle. When something goes wrong, the user should see a clear, human message that tells them what happened and what to do next — never a blank screen, never a spinner that spins forever, and above all never a raw stack trace, which leaks how your system works to anyone curious enough to read it and tells the user only that you did not anticipate this. Decide, for each thing that can fail, what the user sees when it does, and build that.
 
-**Data safety:** Back up the database. If you are using a hosted database, enable automatic backups. If you are managing your own, set up a daily backup script. A product that loses user data is worse than no product at all.
+Take data safety just as seriously, because losing a user's data is the one mistake from which trust does not recover. A product that occasionally has a bug is forgivable; a product that loses the work someone entrusted to it is finished. If you are using a hosted database, turn on automatic backups today, before there is any data to lose, and then actually test that you can restore from one — an untested backup is a guess, not a safeguard. If you are running your own database, write a daily backup that copies to a separate place, because a backup that lives on the same machine as the database it protects is no backup at all once that machine fails.
 
-**Security basics:**
-- Never store passwords in plain text (use bcrypt or similar hashing)
-- Validate and sanitize all user input (prevent SQL injection and XSS)
-- Use HTTPS (most hosting platforms provide this automatically)
-- Do not expose API keys or secrets in frontend code
-- Rate-limit sensitive endpoints (login, registration)
+Security is the same kind of obligation, and the basics are not negotiable once real people are trusting you with their accounts. Never store passwords as plain text — hash them with a purpose-built password hash so that even you cannot read them and a leaked database does not become a leaked set of credentials. Better still, do not build authentication yourself at all; use a managed service so that the hardest, highest-stakes security work is done by people who do it full time. Treat every input from a user as potentially hostile: validate and sanitize it so that crafted input cannot rewrite your database queries or smuggle scripts into other users' browsers. Serve everything over HTTPS, which your hosting platform almost certainly provides for free. Keep every secret — API keys, database credentials, tokens — out of any code that ships to the browser, where anyone can read it, and on the server where it belongs. And put rate limits on the endpoints an attacker would hammer, especially login and registration, so that no one can sit there guessing passwords a thousand times a second. None of this is exotic; all of it is the difference between a product and a liability.
 
-**Monitoring:** You need to know when something breaks before your users tell you. Set up error tracking (Sentry has a free tier) and basic uptime monitoring (UptimeRobot, free).
+Last, set up monitoring so that you learn about problems before your users have to tell you. Wire in error tracking — a free tier is plenty at your scale — so that when something throws an exception in production, you get a report with the details instead of a confused email from a user three days later. Add basic uptime monitoring that checks every few minutes that your site is actually responding and alerts you when it is not. The goal is simple and it is the whole posture of running a product rather than just writing one: you should be the first to know when something breaks, not the last.
 
 ### Dogfooding
 
-Use your own product daily. This is called dogfooding — eating your own dog food. Every friction point you experience is something your users will experience. Fix the things that annoy you. If you would not use your own product, no one else will either.
+Use your own product, every day, for the real thing it is supposed to do — not to test it, but to actually rely on it. This habit has a name in the industry, dogfooding, and it is the cheapest and most honest source of feedback you will ever have. Every point of friction you feel — the step that takes one click too many, the message that confused you for half a second, the thing you wished it did — is a point of friction every one of your users will feel, except they will not file a bug report about it; they will just quietly leave. Fix the things that annoy you, because they are annoying everyone. And take seriously the hardest signal this practice can send: if you find yourself not wanting to use your own product, reaching for the old spreadsheet or the competitor instead, that is not a small problem to note and move past. That is the product telling you it is not yet good enough for anyone, and you are the only person who will hear it early enough to do something about it.
 
 ## Phase 4: Launch (Weeks 15-16)
 
-### Pre-Launch Checklist
+### Before You Tell Anyone
 
-Before telling anyone about your product, verify:
+The launch is the one moment you cannot redo. You get a single first impression with each person who hears about your product, and if the first thing they experience is a broken signup or a core feature that errors out, most of them will never come back to give you a second chance. So before you tell a single stranger your product exists, you walk it like a stranger would, and you do not declare it ready until it survives that walk.
 
-- [ ] The core workflow works completely — start to finish, no errors
-- [ ] The product works on Chrome, Firefox, and Safari
-- [ ] The product works on mobile devices
-- [ ] Error handling covers the common failure cases
-- [ ] A new user can sign up and accomplish the core task without instructions
-- [ ] The landing page clearly explains what the product does and who it is for
-- [ ] There is a way for users to contact you (email, feedback form)
-- [ ] Database backups are running
-- [ ] Error monitoring is active
+Sit down and go through the entire core workflow yourself, end to end, as if you had never seen the product before — sign up with a fresh account, accomplish the main task from a cold start, and confirm there is not a single error or dead end between arriving and succeeding. Do it again in a browser you do not normally use, because the thing that works flawlessly in your daily Chrome has a real chance of breaking in Safari or Firefox in ways you would never catch otherwise. Do it again on your phone, holding it the way a real person would, because a large fraction of your first visitors will arrive on mobile and bounce instantly if the layout is broken. Deliberately do the wrong things — submit the empty form, enter the malformed email, lose your connection mid-action — and confirm that each failure produces a clear message rather than a crash.
+
+Then step back from the product to the things around it. Look at your landing page as a stranger who has three seconds of patience: does it say, plainly and immediately, what this does and who it is for, or does it make them work to understand it? Confirm there is an obvious way for a confused or delighted user to reach you — an email address, a feedback form, anything — because the messages those first users send are the most valuable input you will get and you must not make it hard. And confirm, one last time, that the unglamorous machinery is running: backups are actually happening, error monitoring is actually reporting, so that when launch day brings traffic and edge cases you did not anticipate, you find out immediately instead of from an angry user a week later. When every one of these is true, and not before, you are ready.
 
 ### The Launch
 
@@ -178,6 +171,16 @@ After launch, your job shifts from building to listening. Every week:
 
 This cycle — listen, prioritize, build, ship, listen — is product development. It runs until you decide to stop.
 
+#### A worked iteration, start to finish
+
+Abstract advice about "listening to users" is forgettable; a concrete example of the judgment it requires is not. So follow one week of iteration all the way through. Suppose you have launched a small tool that helps people track shared expenses, and in your first two weeks you have twenty-five signups. You sit down for your weekly review and look at three things at once.
+
+The analytics tell you a story you did not want to hear: of those twenty-five signups, eighteen created an account, eleven added a single expense, and only four ever came back a second day. People are arriving, trying it once, and not returning. That is the most important fact in front of you, more important than any single feature request, because a product no one returns to is not retaining anyone no matter how many sign up. The feedback fills in why. Three separate users have emailed some version of the same thing: they added an expense, and then could not figure out how to actually split it with the other person — the entire point of the product. Meanwhile, two other users have written in asking for a feature to export their data to a spreadsheet, and one has asked for dark mode.
+
+Here is the discipline. The dark-mode request is real, and you could build it this afternoon, and it would feel like progress, and you should not touch it. The export feature is a reasonable Version 2.0 idea; into the notebook it goes. The thing you build this week is the splitting flow, because it is squarely on the core workflow, because three different people independently hit it, and because the analytics confirm it is exactly where users drop off — the eleven who added an expense and the seven who then vanished are almost certainly the people who could not figure out the next step. You are not guessing; the data and the feedback are pointing at the same wound. So you redesign that step to make splitting an expense obvious and immediate, you deploy it, and then you do the thing that turns a fix into a relationship: you reply personally to each of the three users who reported it, tell them it is fixed, and ask them to try again. Some of them will come back, and a user who watched you take their complaint seriously and fix it within a week is far more loyal than one for whom it simply worked the first time.
+
+Notice what made that a good iteration. You let the data tell you where the bleeding was instead of building the request that was loudest or easiest. You distinguished a core-workflow failure from a nice-to-have. You shipped one thing fully rather than three things halfway. And you closed the loop with the humans, because retention is built one rescued user at a time. Run every week of this phase that way.
+
 ### Retention Over Acquisition
 
 It is more valuable to make 10 users love your product than to get 100 users who try it once and leave. Focus on retention: why do users come back? Why do they leave? What would make them recommend it to someone else?
@@ -185,6 +188,8 @@ It is more valuable to make 10 users love your product than to get 100 users who
 Send a personal email to every user who signs up in the first month. Ask: "Thanks for trying [product]. What brought you here? Is it solving the problem you expected?" The responses will teach you more than any analytics dashboard.
 
 ## Success Criteria
+
+These are not boxes to check for credit; they are the evidence that you built a product rather than a portfolio piece. The test of this project is not that you finished it but that something real exists in the world because you did — software at a real address, used by real people who are not obligated to be kind to you. Hold yourself to that. You have succeeded when the following are true:
 
 - The product is live at a custom domain and accessible to the public
 - At least 20 users have signed up (not including friends and family)

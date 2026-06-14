@@ -8,12 +8,10 @@ readiness-indicators:
   - "Can communicate professionally with adults — in writing, by phone, and in person"
   - "Understands basic accounting: revenue, costs, profit, and cash flow"
   - "Has the self-discipline to manage a multi-month project without external deadlines"
-  - "Has identified a genuine market need that they are equipped to serve"
 learning-objectives:
   - "Launch a legal business entity with a defined product or service, pricing, and target market"
   - "Acquire customers through deliberate marketing and sales — not just friends and family"
   - "Manage real finances: revenue, expenses, taxes, and cash flow"
-  - "Make strategic decisions about growth, pricing, and operations under real constraints"
   - "Produce a quarterly business report analyzing performance and proposing next steps"
 modality: hands-on
 duration: "12-16 weeks (10-20 hours per week)"
@@ -94,6 +92,20 @@ This varies by state, but the basics:
 
 Your parent should be aware of and supportive of all of this, but you do the research, make the calls, and fill out the forms. They co-sign where required by your age. That is all.
 
+### Pricing: The Decision That Determines Everything
+
+Most young people underprice. They are afraid to charge what their work is worth, so they compete on being the cheapest option — and the cheapest option attracts the worst customers, earns the thinnest margins, and burns out fastest. You are not running a charity. You are running a business that must pay for your materials, your time, your tools, and your future growth. Price accordingly.
+
+There are three legitimate ways to set a price, and a serious operator understands all three:
+
+1. **Cost-plus.** Add up every cost that goes into one unit — materials, the portion of your tools and overhead that unit consumes, and an honest wage for your own labor — then add a margin on top. If a custom cutting board costs you $14 in wood, $3 in finish, $2 in sandpaper and blades, and four hours of work you value at $20 an hour, your cost is $99. A 40% margin puts the price at roughly $139. Cost-plus is the floor below which you should never sell.
+
+2. **Market-based.** Look at what comparable providers charge. If every other custom board in your area sells for $60 to $90, a $139 board needs a reason — better wood, a lifetime guarantee, custom engraving, faster turnaround. Either justify the premium or accept that your costs are too high and your process needs to get faster.
+
+3. **Value-based.** What is the result worth to the customer? A website that brings a local contractor three new jobs a month is worth far more than the hours it took you to build it. When you can tie your price to the value you create rather than the hours you spend, you have found the most profitable kind of business there is.
+
+Write down your price and the reasoning behind it. Then raise it. Almost every first-time founder sets their price too low, and the easiest profit you will ever earn is the difference between the price you were afraid to charge and the price the market would have paid without complaint. Test it: quote the higher number to the next three prospects and watch what happens. If nobody flinches, you were leaving money on the table.
+
 ## Phase 2: Launch (Weeks 3-6)
 
 ### Finding Customers Beyond Friends and Family
@@ -115,6 +127,26 @@ Your goal for weeks 3-6 is 10 paying customers who are not friends or family. Tr
 1. **Not enough outreach.** You need to talk to 50 people to get 10 customers. Are you reaching 50?
 2. **The pitch is not compelling.** Practice your pitch. Have someone listen and tell you where they lose interest.
 3. **The product does not match the market.** If people genuinely do not want what you are selling, pivot. Do not force a product on a market that does not want it.
+
+### How to Sell Without Being a Salesman
+
+Selling makes most people uncomfortable, which is exactly why so few do it well — and why doing it well is such an advantage. The discomfort comes from a misunderstanding. Selling is not about manipulating someone into buying what they do not need. It is about clearly explaining how you can solve a problem they already have, and then letting them decide. If your product is good and you have found the right customer, selling is simply an honest conversation.
+
+A clean pitch has four parts, and you should be able to deliver it in under thirty seconds:
+
+- **The problem.** Name the thing your customer struggles with. "Most small contractors lose jobs because their website looks like it was built in 2009 — or they don't have one at all."
+- **The solution.** What you do, in one plain sentence. "I build fast, modern websites for trades businesses."
+- **The proof.** Why they should believe you. "Here's a site I built for a roofer down the road — he's booked three weeks out now."
+- **The ask.** Tell them exactly what happens next. "Can I sketch out what yours could look like? It's free, and you decide from there."
+
+Rehearse this out loud until it sounds like you, not like a script. Then prepare for the objections, because you will hear the same four over and over, and the operator who has an honest answer ready wins the business:
+
+- **"It's too expensive."** Reframe to value, not price. "Compared to what? One extra customer pays for the whole thing." If it is genuinely out of reach, offer a smaller starting package — never just slash your price, which teaches the customer that your first number was a lie.
+- **"I need to think about it."** Usually this means an unspoken concern. Ask: "Of course — what's the one thing you're unsure about?" Then address that thing directly.
+- **"I'll get back to you."** Take the next step out of their hands. "Great — I'll follow up Thursday. Does morning or afternoon work better?" Vague follow-up is the same as a no.
+- **A flat no.** Thank them, leave your card, and move on without sulking. Some of your best future customers are people who said no the first time and remembered you when their situation changed.
+
+Track every conversation in a simple sales log: name, date, what they said, and the next action. The single most common reason young businesses fail is not a bad product — it is that the founder gave up after a dozen rejections instead of grinding through to the hundred conversations that build a real customer base. Rejection is not failure. It is the price of admission, and it is non-refundable, so spend it on purpose.
 
 ## Phase 3: Operate (Weeks 7-12)
 
@@ -138,6 +170,22 @@ Track three things every week:
 3. **Customer count:** Total customers, new customers this week, repeat customers. The repeat rate tells you whether your product is good enough to keep.
 
 If your profit margin is below 30%, something is wrong — you are undercharging, your costs are too high, or your process is too slow. Diagnose and fix.
+
+### A Worked Example: Why Profit and Cash Are Not the Same Thing
+
+This distinction sinks more small businesses than any other, so work through it until it is second nature. Imagine you run a meal-prep delivery business. In a given week you sell twelve meal plans at $60 each, for $720 in revenue. Your groceries and packaging cost $300, and you spend $20 on gas. Your profit for the week is $720 − $320 = $400. On paper, a healthy business.
+
+Now look at the timing. You buy the groceries on Sunday — $300 out of your account immediately. You cook and deliver Monday through Wednesday. But four of your twelve customers pay you by check that does not clear until the following week, and two more are on a monthly invoice. So the cash that actually landed in your account this week was only $360, while $320 went out. You ended the week with $40 more than you started — even though you "earned" $400. If next week's grocery bill comes due before those checks clear, you can be a profitable business that cannot make payroll. That is how companies die: not from a lack of profit, but from a lack of cash at the moment a bill is due.
+
+The lesson is permanent. Track cash on a calendar, not just profit on a spreadsheet. Ask for payment up front whenever you can. Deposit checks the day you receive them. Keep a small cash reserve — at minimum, enough to cover one full cycle of costs before any revenue arrives. The founders who survive their first year are almost never the most talented. They are the ones who never let the bank balance hit zero.
+
+### Building Systems So the Business Doesn't Depend on Your Mood
+
+In the early weeks you hold the whole business in your head. That works until you are sick, or busy with school, or simply tired — and then everything stops, because you are the only one who knows how anything is done. The fix is to write your work down as systems: simple, repeatable checklists that turn what you know into something that can be followed reliably, even on a bad day.
+
+Start with your three most important repeated tasks. For each, write a checklist of every step from start to finish. A delivery checklist might read: confirm the order, prep the packaging the night before, set the alarm for 6 a.m., follow the route in this order, text the customer when you're five minutes out, photograph the drop-off, log the payment. It looks almost insultingly simple. That is the point. A good system removes the need to remember, the need to decide, and the need to be at your best — which is exactly what lets you scale, take a day off, or one day hand the work to someone else without quality collapsing.
+
+This is the difference Michael Gerber writes about between working *in* your business and working *on* your business. Working in it means doing the tasks. Working on it means improving the machine that does the tasks. Spend a little time every single week working on the business — refining one system, fixing one bottleneck — and over a quarter you will have built something far more valuable than a string of completed jobs. You will have built an operation.
 
 ### Quality and Reputation
 
