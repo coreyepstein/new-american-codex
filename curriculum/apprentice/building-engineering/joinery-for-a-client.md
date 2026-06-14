@@ -63,6 +63,8 @@ Good first client projects:
 
 For your first client project, do not charge for labor. You are learning. The client gets a free custom piece. You get the education. This is not free work forever — it is an apprentice's exchange. After you have built 2-3 client pieces successfully, you start charging.
 
+Understand what you are actually trading. You are giving up your time and accepting risk — the risk that a board splits, a joint fails, or you run out of wood and have to buy more. In return you get something more valuable than money at this stage: a real deadline, a real person who will use the thing every day, and honest feedback you cannot get from building for yourself. A client will notice the drawer that sticks in humid weather. You would have shrugged it off. That noticing is the education you are buying with your unpaid hours. Treat the arrangement seriously even though no money changes hands. Show up when you said you would. Communicate if you fall behind. The habits you build on a free project are the habits you will carry into paid ones, and a client who trusts you now is the client who refers you to three more people later.
+
 ## Phase 1: The Client Meeting (Session 1, 60 minutes)
 
 ### Understanding the Brief
@@ -144,7 +146,9 @@ When you are confident the fit is correct, apply glue and assemble. Work quickly
 
 Apply glue to both surfaces of each joint. Assemble. Clamp firmly but not so tight that you distort the wood. Check for square with your combination square. Wipe excess glue with a damp rag.
 
-Leave clamped for at least one hour. Overnight is better.
+Glue-up is the moment in this project where calm matters most. Once the glue is on the wood, the clock is running and there is no taking it back. This is exactly why you dry-fit first and lay out every clamp within reach before you uncap the bottle — so that when the pressure is on, your hands already know the sequence. Treat the wet glue squeeze-out seriously: it looks harmless now, but if you leave it to dry it will refuse to take a finish, and the client will see a pale blotch around every joint. Wipe it while it is still wet, then check the same spots again ten minutes later, because more will weep out as the clamps bite down. Resist the urge to over-tighten. A joint that was cut accurately needs only enough clamp pressure to close the gap and squeeze out a thin, even bead. If you find yourself cranking the clamps hard to pull a joint shut, that joint was cut wrong, and the glue line will stay starved and weak no matter how hard you crush it. Stop, note it, and fix the fit on the next piece rather than forcing this one.
+
+Leave clamped for at least one hour. Overnight is better. Walk away and let the chemistry finish — peeking and flexing the joint while the glue is still rubbery only breaks the bond you are waiting on.
 
 ### Finishing
 

@@ -260,6 +260,12 @@ Your app runs on your computer at `localhost:3000`. That means only you can use 
 
 **Important:** Your SQLite database file must be in a directory that persists between deploys. For production apps, you would use a hosted database (PostgreSQL, MySQL). For this project, SQLite on Railway works for small-scale use.
 
+### Secrets, Configuration, and Not Leaking Your Keys
+
+The moment your code leaves your laptop and runs on a server other people can reach, you inherit a responsibility you did not have before: you are now in charge of things that, if mishandled, can cost real money or expose real people. The first habit professionals build is keeping secrets out of source code. An API key, a database password, a signing token — these never get typed directly into a file you commit. They live in **environment variables**, which the hosting platform injects at runtime and which you read in code with `process.env.MY_KEY`. On your own machine you keep them in a file called `.env`, and you add that filename to `.gitignore` so it is never pushed to GitHub. This is not bureaucracy. People who paste a cloud key into a public repository routinely wake up to thousands of dollars in charges from someone who found it within minutes of the commit landing. Treat every secret as something that, once leaked, you must assume is permanently compromised and must rotate.
+
+Configuration is the broader version of the same idea. The port your server listens on, the location of your database, whether you are running in development or production — these differ between your laptop and the live server, so they should be read from the environment rather than hard-coded. A small but telling change: instead of `app.listen(3000)`, write `app.listen(process.env.PORT || 3000)`. Hosting platforms tell your app which port to use through `PORT`, and an app that ignores that instruction simply will not be reachable. Learning to separate code (the same everywhere) from configuration (different per environment) is one of the quiet markers that separates a hobby script from something built to run in the world.
+
 ### Testing in Production
 
 Visit your live URL. Does everything work? Test every feature:
