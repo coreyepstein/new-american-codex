@@ -194,10 +194,270 @@ h6 {
   transform: translateY(0);
 }
 
+/* ─── Lesson objectives (hero block) ─── */
+.lesson-objectives {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+}
+
+/* ─── Lesson body (rendered markdown) ─── */
+.lesson-body {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  font-size: 1.1875rem;
+  line-height: 1.75;
+  max-width: 72ch;
+}
+
+.lesson-body > :first-child { margin-top: 0; }
+
+.lesson-body p {
+  margin: 0 0 1.4em;
+}
+
+/* Lead paragraph — an entry point into the lesson */
+.lesson-body > p:first-of-type {
+  font-size: 1.35rem;
+  line-height: 1.55;
+  color: var(--color-black);
+}
+
+.lesson-body h2 {
+  position: relative;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.55rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+  margin: 3rem 0 1.1rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-card-border);
+  scroll-margin-top: 6rem;
+}
+.lesson-body h2::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 3rem;
+  height: 3px;
+  background: var(--color-red);
+}
+
+.lesson-body h3 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.01em;
+  color: var(--color-black);
+  margin: 2.25rem 0 0.75rem;
+  scroll-margin-top: 6rem;
+}
+
+.lesson-body h4 {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  color: var(--color-red);
+  margin: 1.75rem 0 0.5rem;
+}
+
+/* Section-type treatments */
+.lesson-body h2[data-kind="safety"] { color: var(--color-red); }
+.lesson-body h2[data-kind="session"]::before,
+.lesson-body h2[data-kind="extension"]::before { background: var(--color-navy); }
+
+.lesson-body ul,
+.lesson-body ol {
+  margin: 0 0 1.4em;
+  padding-left: 0;
+}
+.lesson-body li {
+  position: relative;
+  margin: 0 0 0.55em;
+  padding-left: 1.75rem;
+  list-style: none;
+}
+.lesson-body ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  top: 0.72em;
+  width: 0.6rem;
+  height: 2px;
+  background: var(--color-red);
+}
+.lesson-body ol {
+  counter-reset: lesson-ol;
+}
+.lesson-body ol > li {
+  counter-increment: lesson-ol;
+}
+.lesson-body ol > li::before {
+  content: counter(lesson-ol);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--color-red);
+}
+.lesson-body li > ul,
+.lesson-body li > ol {
+  margin: 0.5em 0 0;
+}
+
+.lesson-body strong { color: var(--color-black); font-weight: 600; }
+.lesson-body em { font-style: italic; }
+.lesson-body a {
+  color: var(--color-red);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.lesson-body a:hover { color: var(--color-black); }
+
+.lesson-body hr {
+  border: 0;
+  height: 1px;
+  background: var(--color-card-border);
+  margin: 2.5rem 0;
+}
+
+/* Callouts (markdown blockquotes) */
+.lesson-body .lesson-callout {
+  margin: 1.75rem 0;
+  padding: 1.1rem 1.3rem;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-top: 3px solid var(--color-navy);
+  font-size: 1.0625rem;
+}
+.lesson-body .lesson-callout > :last-child { margin-bottom: 0; }
+
+/* Tables */
+.lesson-body .lesson-table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+}
+.lesson-body .lesson-table th {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-align: left;
+  color: var(--color-black);
+  background: var(--color-card-bg);
+  border-bottom: 2px solid var(--color-black);
+  padding: 0.6rem 0.85rem;
+  white-space: nowrap;
+}
+.lesson-body .lesson-table td {
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--color-card-border);
+  vertical-align: top;
+}
+
+/* Code */
+.lesson-body code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--color-red);
+  background: var(--color-card-bg);
+  padding: 0.1em 0.35em;
+}
+.lesson-body pre {
+  background: var(--color-black);
+  color: #FAFAFA;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.lesson-body pre code {
+  color: inherit;
+  background: none;
+  padding: 0;
+}
+
+/* ─── Lesson section nav (TOC) ─── */
+.lesson-toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: none;
+}
+.lesson-toc-list li { margin: 0; }
+.lesson-toc-list a {
+  display: flex;
+  gap: 0.65rem;
+  align-items: baseline;
+  padding: 0.4rem 0;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: var(--color-text-secondary);
+  border-top: 1px solid var(--color-card-border);
+  transition: color 0.15s ease-out;
+}
+.lesson-toc-list li:first-child a { border-top: 0; }
+.lesson-toc-list a:hover { color: var(--color-black); }
+.lesson-toc-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-red);
+  flex: none;
+}
+
+.lesson-toc-mobile {
+  border: 1px solid var(--color-card-border);
+  background: var(--color-card-bg);
+  margin-bottom: 2.5rem;
+}
+.lesson-toc-mobile > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-black);
+}
+.lesson-toc-mobile > summary::-webkit-details-marker { display: none; }
+.lesson-toc-mobile > summary > span {
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.1em;
+}
+.lesson-toc-mobile .lesson-toc-list {
+  padding: 0 1.1rem 0.5rem;
+}
+
 /* ─── Print styles ─── */
 @media print {
   nav, footer, .no-print { display: none !important; }
   body { background: white !important; color: black !important; }
   .print-break-avoid { break-inside: avoid; }
   .print-expanded { max-height: none !important; overflow: visible !important; }
+  .lesson-toc, .lesson-toc-mobile { display: none !important; }
+  .lesson-body h2 { break-after: avoid; }
 }
