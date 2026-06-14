@@ -10,14 +10,13 @@ export const metadata: Metadata = {
 export default async function Page({
   searchParams,
 }: {
-  searchParams: Promise<{ stage?: string; modality?: string; childId?: string }>;
+  searchParams: Promise<{ stage?: string; modality?: string }>;
 }) {
   const params = await searchParams;
   return (
     <PersonalizePage
       defaultStage={params.stage}
       defaultModality={params.modality}
-      childId={params.childId}
     />
   );
 }

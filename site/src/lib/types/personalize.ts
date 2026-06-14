@@ -20,7 +20,6 @@ export interface PersonalizeResponse {
   units: GeneratedUnit[];
   childName?: string;
   stage: string;
-  planId?: string;
 }
 
 export const VALID_STAGES = [
