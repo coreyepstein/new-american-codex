@@ -30,6 +30,10 @@ The supplement industry has convinced modern parents that pregnancy nutrition co
 
 This lesson is not a medical protocol. It is a practical guide to eating well during pregnancy, based on what traditional cultures fed their pregnant women for thousands of years and what modern nutritional science confirms. The principles are simple: eat real food, eat enough of it, eat a variety of it, and stop worrying about the rest.
 
+A word before you begin: pregnancy is one of the few seasons of life when nearly everyone — your mother, your coworker, a stranger in the grocery line, and an entire industry of apps and influencers — feels entitled to tell you what to put in your mouth. Most of that advice is fear, not nutrition. It will hand you a list of forbidden foods longer than the list of permitted ones and leave you anxious at every meal. The goal of this lesson is the opposite. You are going to learn a small number of durable principles, the handful of nutrients that genuinely matter, and a flexible framework you can run on autopilot. Once you understand the logic, you can stop reading the labels of fear and start trusting yourself. That confidence is itself a form of nourishment — a calm, well-fed parent is the foundation everything else in this pillar is built on.
+
+Read this once now, then return to it as your appetite and your body change across the three trimesters. What works in the first trimester, when nausea may make the thought of liver unbearable, will not be what works in the third, when you are ravenous and building bone. The framework bends to meet you where you are.
+
 ## The Principles
 
 ### Principle 1: Density Over Quantity
@@ -39,6 +43,8 @@ Pregnancy increases your caloric needs by about 300 calories per day in the seco
 A fast food meal might provide 800 calories with minimal nutritional value. A bowl of bone broth with vegetables, a piece of salmon, and a sweet potato provides the same calories with folate, omega-3 fatty acids, iron, vitamin A, vitamin C, protein, and collagen.
 
 Eat fewer empty calories. Eat more dense ones.
+
+This principle matters more during pregnancy than at any other time in your life, because your appetite and your nutritional needs can drift out of sync. In the first trimester, nausea may shrink your appetite to crackers and ginger ale at exactly the moment the neural tube is forming. In the third, the baby crowds your stomach so you can only eat small amounts at a time. In both cases the answer is the same: when you can only eat a little, every bite should carry as much nutrition as possible. A handful of nuts beats a handful of pretzels. A boiled egg beats a granola bar. You are not trying to eat perfectly — you are trying to make the food that does go in count. Think of it as a budget. You have a limited number of bites in a day, and the question for each one is simply, "Is this building the baby, or just filling the space?"
 
 ### Principle 2: The Critical Nutrients
 
@@ -84,6 +90,16 @@ If it comes in a package with a long ingredient list, it is probably not helping
 
 This does not mean you can never eat bread or pasta or ice cream. It means the foundation of your diet should be recognizable, whole foods — and the rest is gravy (sometimes literally).
 
+## Eating Through the Three Trimesters
+
+Your body's needs are not static across pregnancy, and neither is your ability to meet them. Adjust the framework to the season you are in.
+
+**First trimester (weeks 1-13): survival eating.** This is the trimester of nausea, food aversions, and exhaustion — and, cruelly, it is also when folate matters most, because the neural tube closes by about week six. If you can barely eat, do not panic. Two things carry you through. First, the folate you most need was ideally already in your body before conception, which is why this lesson belongs in the Genesis stage: the best prenatal nutrition starts months before the positive test. Second, eat whatever stays down, and make the few foods you can tolerate as nutrient-dense as possible. If only cold things appeal, a smoothie with spinach, full-fat yogurt, and frozen berries hides a lot of nutrition. If only bland carbs work, top the toast with an egg and avocado. Eat small amounts often rather than three big meals; an empty stomach makes nausea worse. This is the one trimester where the prenatal vitamin earns its keep most clearly — it is the safety net for the weeks when food fails you.
+
+**Second trimester (weeks 14-27): the rebuilding window.** Nausea usually lifts, appetite returns, and energy comes back. This is your chance to eat well and build reserves. Reestablish the daily anchors below, reintroduce the foods you could not face earlier, and lean into iron-rich foods now, because your blood volume is climbing and iron-deficiency anemia is common in the back half of pregnancy. This is also the easiest trimester in which to build the freezer stash and kitchen habits the other units in this pillar describe — your body is most capable now, so use it.
+
+**Third trimester (weeks 28-40): small meals, big demands.** The baby is gaining weight fast and laying down bone, so calcium, protein, and calories all rise — but the growing uterus presses on your stomach, so you can eat less at a sitting. The solution is frequency: five or six small, dense meals beat three large ones. Keep snacks dense and within reach. Heartburn is common now; if it strikes, eat earlier in the evening, sit up after eating, and identify your personal triggers rather than cutting whole food groups. Constipation is also common throughout pregnancy — fiber from vegetables, fruit, and whole grains, plus adequate water, is the real food answer before any laxative.
+
 ## The Weekly Meal Framework
 
 You do not need a rigid meal plan. You need a framework that ensures you hit the critical nutrients most days without thinking too hard about it.
@@ -126,6 +142,12 @@ Keep this list short and evidence-based. Ignore the fear-mongering.
 - **High-mercury fish.** Swordfish, shark, king mackerel, tilefish. Stick to salmon, sardines, and smaller fish.
 - **Highly processed food as a staple.** An occasional treat is fine. A diet built on packaged food will leave you and the baby malnourished despite adequate calories.
 - **Excessive caffeine.** Under 200 mg per day (one 12-ounce cup of coffee) is generally considered safe. If you are anxious about it, switch to half-caf or tea.
+
+Notice what is *not* on this list. You do not need to fear soft cheeses if they are pasteurized — read the label and pasteurized brie is fine. You do not need to give up deli meat forever; heating it until steaming kills the listeria concern. You do not need to avoid eggs, which are one of the best prenatal foods on earth, as long as they are cooked. The reason the avoid-list is short is that most of the long lists you will encounter are built on worst-case fear rather than real risk. When someone hands you a forbidden food, ask the simple question: what is the actual mechanism of harm, and how large is the risk? Alcohol crosses the placenta and there is no known safe dose — that earns its place. A turkey sandwich does not. Learning to ask that question protects you from a pregnancy spent anxious and undernourished because you were too afraid to eat.
+
+## A Note on Hydration
+
+Food gets all the attention, but water is doing quiet, essential work throughout pregnancy. Your blood volume rises by roughly fifty percent, the amniotic fluid your baby floats in is mostly water and is replenished constantly, and your kidneys are filtering for two. Aim for steady hydration across the day rather than gulping a quart at once — pale-yellow urine is the simplest gauge. Adequate water also eases two of pregnancy's most common complaints, constipation and swelling, and helps prevent the urinary tract infections that are more frequent now. Warm broths and herbal teas count toward your fluids and carry minerals besides, which is part of why bone broth appears so often in this pillar. Caffeinated and sugary drinks do not replace water; treat them as extras, not as your baseline.
 
 ## Going Deeper
 
